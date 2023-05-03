@@ -1,9 +1,10 @@
 const express=require('express');
 const {connection}=require('./config/db')
+const {stylist}=require('./routes/stylist.router')
 const app = express();
+app.use(express.json());
 
-
-
+app.use("/stylist",stylist)
 
 
 
