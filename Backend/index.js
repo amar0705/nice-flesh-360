@@ -1,10 +1,12 @@
 const express=require('express');
 const {connection}=require('./config/db')
 const {stylist}=require('./routes/stylist.router')
+const {product}=require('./routes/product.router')
 const app = express();
 app.use(express.json());
-
+app.use("/product",product)
 app.use("/stylist",stylist)
+
 
 
 
