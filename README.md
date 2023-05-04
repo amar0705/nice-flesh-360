@@ -4,18 +4,21 @@
 ### 1. Homepage
 ### 2. Signup / Login Page
     (Name, email, age, gender, password, Mobile Number) / (email, password)
-### 3. Service page (Redis) / Stylist Page (Redis)
+### 3. Service page (Redis) / Stylist Page (Redis) / Styles Page (Redis)
 ### 4. Appointment Page / Payment Page
 ### 5. ecommerce page
+### 6. Appointment time Drop down
+### 7. Appointment Confirmation
 
 #### Optional: 
 ### 1. OTP
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
+### 2. CRUD Operations
 
 ## Backend:
-### 1. Login / Signup
+### 1. Login / Signup User Data
 ### 2. Relationship (User- Appointment)
 ### 3. Appointment Data 
 ### 4. Services
@@ -34,5 +37,5 @@
         Homepage => Styles
         
     2. Protected Routes:
-        Homepage => Signup => Login => Book Appointment => Style => Stylist => Time Slot => Booking Confirmation
+        Homepage => Signup => Login => Book Appointment => Select Style => Select Stylist => Book Time Slot => Booking Confirmation
         
