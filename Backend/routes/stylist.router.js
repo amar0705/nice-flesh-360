@@ -10,6 +10,28 @@ stylist.get("/",async(req,res)=>{
     )
 })
 
+stylist.get("/male",async(req,res)=>{
+    try{
+    let data= await StylistModel.aggregate([{ $match: { Styler: "male" } }])
+    res.status(200).send(
+        data
+    )
+    }
+    catch(err){
+        res.status(500).send(err.message)
+    }
+})
 
+stylist.get("/female",async(req,res)=>{
+    try{
+    let data= await StylistModel.aggregate([{ $match: { Styler: "female" } }])
+    res.status(200).send(
+        data
+    )
+    }
+    catch(err){
+        res.status(500).send(err.message)
+    }
+})
 
 module.exports ={stylist}
