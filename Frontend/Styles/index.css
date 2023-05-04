@@ -53,6 +53,10 @@ nav {
   height: 175px;
 }
 
+#navbar {
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+}
+
 .nav-tabs {
   display: flex;
   font-weight: 600;
