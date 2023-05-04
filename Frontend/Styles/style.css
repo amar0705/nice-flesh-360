@@ -1,0 +1,40 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  /* background-image: url('https://77thehill.com/wp-content/uploads/2016/03/hair-salon-enfield.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+}
+.card{
+    width: 100%;
+/* eight: 500px; */
+    position: relative;
+    overflow-y: hidden;
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+  }
+
+  
+  .btn{
+    display: block; 
+    /* margin: auto; */
+   }
