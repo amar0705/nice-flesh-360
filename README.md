@@ -6,7 +6,7 @@
     (Name, email, age, gender, password, Mobile Number) / (email, password)
 ### 3. Service page (Redis) / Stylist Page (Redis) / Styles Page (Redis)
 ### 4. Appointment Page / Payment Page
-### 5. ecommerce page
+### 5. ecommerce page / Product Page
 ### 6. Appointment time Drop down
 ### 7. Appointment Confirmation
 

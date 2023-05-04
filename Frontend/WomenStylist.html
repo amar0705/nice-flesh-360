@@ -17,11 +17,40 @@
 
     <!-- Nav bar -->
     <!-- Stylists  -->
-<div class="cont">
-    <div id="main-cont">
+    <div class="cont">
+    
+        <div id="main-cont">
+           
+            
+        </div>
         
     </div>
-</div>
+    <div class="popup">
+            <header>
+              <span>Pick Your Time</span>
+              <div class="close">x<i class="uil uil-times"></i></div>
+            </header>
+            <div class="content">
+              <form>
+                <input type="date" class="form-control ppDate" id="from-date" aria-describedby="date-design-prepend">
+                <br />
+            <select class="form-control ppDate" id="time" name="option" required>
+              <option value="" disabled selected>Select Your Time Slot</option>
+              <option value="08-09">08:00 AM to 09:00 AM</option>
+              <option value="09-10">09:00 AM to 10:00 AM</option>
+              <option value="10-11">10:00 AM to 11:00 AM</option>
+              <option value="11-12">11:00 AM to 12:00 PM</option>
+              <option value="12-13">12:00 PM to 01:00 PM</option>
+              <option value="14-15">02:00 PM to 03:00 PM</option>
+              <option value="15-16">03:00 PM to 04:00 PM</option>
+              <option value="16-17">04:00 PM to 05:00 PM</option>
+              <option value="17-18">05:00 PM to 06:00 PM</option>
+            </select>
+            <br />
+            <input class="bookbtn" id="time_btn" type="submit" value="Book Now" />
+              </form>
+            </div>
+          </div>
 </body>
 </html>
 <script src="./Scripts/womenstylist.js"></script>
