@@ -4,9 +4,11 @@ const {connection}=require('./config/db')
 const {stylist}=require('./routes/stylist.router')
 const {product}= require('./routes/product.router')
 const {styleRouter} =require('./routes/style.router')
+const {admin} =require('./routes/admin.router')
 const app = express();
 app.use(express.json());
 app.use(cors())
+app.use("/admin",admin)
 app.use("/stylist",stylist)
 app.use("/product",product)
 app.use("style",styleRouter)
