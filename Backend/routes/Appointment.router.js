@@ -1,6 +1,7 @@
 const express=require('express')
 const appointment=express.Router()
 const { AppointmentModel } = require("../models/Appointment.model");
+const {authenticate} = require("../middlewares/authorization")
 
 
 
@@ -15,11 +16,27 @@ appointment.get("/",async (req,res) =>{
     }
 })
 
-// --------->>>> POST <<<<<---------
-appointment.post("/new",async (req,res)=>{
-    const payload=req.body;
+
+//--------->>>> GET ROUTE FOR USERS <<<<<---------
+appointment.get("/users",authenticate,async (req,res) =>{
+    let userid=req.body.author
     try {
-        const appointmentData=new AppointmentModel(payload);
+        const data=await AppointmentModel.aggregate([{$match:{user_id:userid}}]);
+        res.status(200).send(data);
+    } catch (error) {
+        console.log(error.message);
+        res.status(404).send({Message:"Bad request 404! unable to fetch the data"});
+    }
+})
+
+
+
+// --------->>>> POST <<<<<---------
+appointment.post("/new",authenticate,async (req,res)=>{
+    const payload=req.body;
+    const user_id=req.body.author;
+    try {
+        const appointmentData=new AppointmentModel({...payload,user_id:user_id});
         await appointmentData.save();
         res.status(200).send({Message:"Appointment created successfully"});
     } catch (error) {
@@ -42,7 +59,7 @@ appointment.patch("/:id",async (req,res)=>{
 })
 
 // --------->>>> DELETE <<<<<---------
-appointment.delete("/:id",async(req,res)=>{
+appointment.delete("/delete/:id",authenticate,async(req,res)=>{
     const id=req.params.id;
     try {
         await AppointmentModel.findByIdAndDelete({_id:id});

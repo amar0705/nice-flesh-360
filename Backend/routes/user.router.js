@@ -30,7 +30,7 @@ userRouter.post("/login",async(req,res)=>{
     try {
         const user=await usermodel.find({email})
         if(user.length>0){
-            bcrypt.compare(pass,user[0].passw,(err,result)=>{
+            bcrypt.compare(pass,user[0].pass,(err,result)=>{
                 if(result){
                     const token=jwt.sign({email:email,userid:user[0]._id},"hell")
                     res.send({"msg":'logged in',token:token})
