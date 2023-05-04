@@ -10,6 +10,15 @@ app.use("/stylist",stylist)
 app.use("/product",product)
 
 
+const {userRouter}=require("./routes/user.router")
+
+const {authenticate}=require("./middlewares/authorization")
+
+
+require("dotenv").config();
+
+app.use(cors());
+
 
 
 
@@ -18,6 +27,8 @@ app.use("/product",product)
 app.get('/', (req, res) => {
     res.send({msg:"Welcome!"});
 })
+app.use("/user",userRouter)
+app.use(authenticate)
 
 
 
