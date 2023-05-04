@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://files.slack.com/files-pri/T050D73RQLF-F055GLP871U/salonlex.png">
+    <link rel="stylesheet" href="./Styles/test.css">
+</head>
+<body>
+   <div class="logocon" style="border:px black solid;">
+<img style="height: 300px; width: 300px;" src="../Frontend/image/login.gif" alt="gif">
+   </div> 
+
+<div class="container" style="border: solid red px;">
+    <h2 class="login-title">Log in</h2>
+
+    <form class="login-form">
+      
+      <div>
+        <label for="email">Email </label>
+        <input
+               id="email"
+               type="email"
+               placeholder="me@example.com"
+               name="email"
+               required
+               />
+      </div>
+
+      <div>
+        <label for="password">Password </label>
+        <input
+               id="pass"
+               type="password"
+               placeholder="password"
+               name="password"
+               required
+               />
+      </div>
+<br>
+      <button onclick="logFun()" class="btn btn--form" type="submit" value="Log in">
+        Log in
+      </button>
+    </form>
+    <p >Create an <a href="./singup.html">account</a></p> 
+</div>
+
+</body>
+</html>
+<script>
+    const logFun=()=>{
+        const payload={
+      
+            email:document.getElementById("email").value,
+            pass:document.getElementById("pass").value
+        }
+        fetch("http://localhost:7070/user/login",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(payload)
+        }).then(res=>res.json())
+        .then(res=>{
+            console.log(res)
+            localStorage.setItem("token",res.token)
+        })
+        .catch(err=>console.log(err))
+    
+    }
+    </script>
