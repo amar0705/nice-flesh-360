@@ -5,6 +5,314 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salonlex</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./Styles/index.css" />
   </head>
-  <body></body>
+  <body>
+    <div>
+      <div id="navbar">
+        <header>
+          <div class="nav-wrapper">
+            <div class="logo-container">
+              <img class="logo" src="./assets/SALONLEX-removebg-preview.png" alt="Logo" />
+            </div>
+            <nav>
+              <input class="hidden" type="checkbox" id="menuToggle" />
+              <label class="menu-btn" for="menuToggle">
+                <div class="menu"></div>
+                <div class="menu"></div>
+                <div class="menu"></div>
+              </label>
+              <div class="nav-container">
+                <ul class="nav-tabs">
+                  <li class="nav-tab">Products</li>
+                  <li class="nav-tab">Services</li>
+                  <li class="nav-tab">Contact</li>
+                  <li class="nav-tab">Login</li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+      <div id="video-banner" style="margin-bottom: -7px; padding: 0; scroll-snap-align: start">
+        <video width="100%" height="auto" autoplay loop muted>
+          <source id="dskvideo" src="./assets/pexels-pavel-danilyuk-4178342-1920x1080-30fps.mp4" />
+          <source id="mobvideo" src="./assets/pexels-pavel-danilyuk-4178342-1920x1080-30fps.mp4" />
+        </video>
+      </div>
+      <div id="in-trend">
+        <img src="./assets/Section_3.png" />
+      </div>
+      <div id="cards">
+        <div id="products-card">
+          <img src="https://i.pinimg.com/originals/d1/2f/67/d12f67871fcc788fc73bcffda7a8d405.png" />
+        </div>
+        <div id="hairstyles-card">
+          <img src="./assets/hairstyle.png" />
+        </div>
+        <div id="stylist-card">
+          <img
+            src="https://s3.eu-central-1.amazonaws.com/uberall-userpics-prod/2648446/medium_3DjFOMsKYF.jpg"
+          />
+        </div>
+      </div>
+      <div id="slider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel" data-slide-to="1"></li>
+          <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="https://daks2k3a4ib2z.cloudfront.net/54c2ba4f2d5eaa62178feea6/54cac22eca3b7c9a3d9e3b8f_slide1.jpg"
+              alt="First slide"
+              width="925"
+              height="600"
+            />
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="https://daks2k3a4ib2z.cloudfront.net/54c2ba4f2d5eaa62178feea6/54cac439d2017d9b3d5b66b5_slide2.jpg"
+              alt="Second slide"
+              width="925"
+              height="600"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="https://daks2k3a4ib2z.cloudfront.net/54c2ba4f2d5eaa62178feea6/54cac262c7b1fb7312fd4d51_slide3.jpg"
+              alt="Third slide"
+              width="925"
+              height="600"
+            />
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div id="in-trend">
+        <img src="./assets/brands.png" />
+      </div>
+
+      <div id="footer-tab">
+        <footer class="main-footer">
+          <div class="container">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+              <div class="row clearfix">
+                <!--Column-->
+                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                  <div class="row clearfix">
+                    <!--Footer Column-->
+                    <div class="footer-column col-lg-7 col-md-6 col-sm-12">
+                      <div class="footer-widget about-widget">
+                        <div class="logo">
+                          <a href="#"
+                            ><img
+                              id="footer-logo"
+                              src="./assets/SALONLEX-removebg-preview.png"
+                              alt=""
+                          /></a>
+                        </div>
+                        <div class="text">
+                          <p>
+                            We believe that great hair is not just about the latest trends or the
+                            newest products, but also about listening to our clients' needs and
+                            preferences.
+                          </p>
+                          <p>
+                            Thank you for choosing our salon, and we look forward to seeing you
+                            soon!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer Column-->
+                    <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                      <div class="footer-widget links-widget">
+                        <h2>Quick Links</h2>
+                        <ul class="footer-list">
+                          <li><a href="#">Company History</a></li>
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                          <li><a href="#">Services</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Column-->
+                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                  <div class="row clearfix">
+                    <!--Footer Column-->
+                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                      <div class="footer-widget gallery-widget">
+                        <h2>Gallery</h2>
+                        <div class="widget-content">
+                          <div class="http://t.commonsupport.com/morris/images-outer clearfix">
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/CKNmhMX/blog1.jpg" alt=""
+                              /></a>
+                            </figure>
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/m5yGbdR/blog2.jpg" alt=""
+                              /></a>
+                            </figure>
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/CKNmhMX/blog1.jpg" alt=""
+                              /></a>
+                            </figure>
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/m5yGbdR/blog2.jpg" alt=""
+                              /></a>
+                            </figure>
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/CKNmhMX/blog1.jpg" alt=""
+                              /></a>
+                            </figure>
+                            <!--Image Box-->
+                            <figure class="image-box">
+                              <a
+                                href="#"
+                                class="lightbox-image"
+                                data-fancybox="footer-gallery"
+                                title="Image Title Here"
+                                data-fancybox-group="footer-gallery"
+                                ><img src="https://i.ibb.co/m5yGbdR/blog2.jpg" alt=""
+                              /></a>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer Column-->
+                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                      <div class="footer-widget info-widget">
+                        <h2>Contact Info</h2>
+                        <ul class="info-list">
+                          <li>347, Boulevard Street, Bangalore</li>
+                          <li>+91-9090909090</li>
+                          <li>info@salonlex.com</li>
+                        </ul>
+                        <!-- Social Links -->
+                        <ul class="social-links">
+                          <li class="google">
+                            <a href="#"><span class="fa fa-google"></span></a>
+                          </li>
+                          <li class="facebook">
+                            <a href="#"><span class="fa fa-facebook-f"></span></a>
+                          </li>
+                          <li class="instagram">
+                            <a href="#"><span class="fa fa-instagram"></span></a>
+                          </li>
+                          <li class="twitter">
+                            <a href="#"><span class="fa fa-twitter"></span></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row clearfix">
+                <div class="column col-lg-6 col-md-12 col-sm-12">
+                  <div class="copyright">
+                    <span class="theme_color">Salonlex</span> &copy; 2023 All Right Reserved
+                  </div>
+                </div>
+                <div class="column col-lg-6 col-md-12 col-sm-12">
+                  <ul class="footer-nav">
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
