@@ -26,3 +26,13 @@
 ## Database:
 ### 1. MongoDB
 ### 2. Redis
+
+## Working Routes
+    1. Unprotected Route:
+        Homepage => Products
+        Homepage => Stylist
+        Homepage => Styles
+        
+    2. Protected Routes:
+        Homepage => Signup => Login => Book Appointment => Style => Stylist => Time Slot => Booking Confirmation
+        
