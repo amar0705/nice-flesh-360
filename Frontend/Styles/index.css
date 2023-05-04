@@ -53,6 +53,10 @@ nav {
   height: 175px;
 }
 
+#navbar {
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+}
+
 .nav-tabs {
   display: flex;
   font-weight: 600;
@@ -245,8 +249,9 @@ ul {
   list-style: none;
 }
 img {
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
 }
 section {
   padding: 60px 0;
