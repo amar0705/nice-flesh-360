@@ -15,7 +15,7 @@
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
-### 2. 
+### 2. Product(items): Rendering
 
 
 ## Backend:
