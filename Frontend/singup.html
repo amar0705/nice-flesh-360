@@ -12,49 +12,67 @@
     <link rel="stylesheet" href="./Styles/test.css" />
   </head>
   <body>
-    <div class="logocon" style="border: px black solid">
+    <div class="logocon-signup" style="border: px black solid">
       <img style="height: 300px; width: 300px" src="./image/TheWaywardHairdresser.gif" alt="gif" />
       <a href="./"></a>
     </div>
 
-    <div class="container" style="border: solid red px">
-      <h2 class="login-title">Register</h2>
+    <div class="container-signup" style="border: solid red px">
+      <h2 class="login-title">Register Here!</h2>
 
-      <form class="login-form">
+      <form class="signup-form">
         <div>
           <label for="email">Email </label>
-          <input id="email" type="email" placeholder="me@example.com" name="email" required />
+          <input
+            id="signup-email"
+            type="email"
+            placeholder="me@example.com"
+            name="email"
+            required
+          />
         </div>
 
         <div>
           <label for="gender">Gender:</label>
-          <select name="gender" id="gen">
+          <select name="gender" id="signup-gen">
             <option value="">Please select one…</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
             <option value="non-binary">Non-Binary</option>
             <option value="other">Other</option>
-            <option value="Prefer not to answer">Perfer not to Answer</option>
+            <option value="Prefer not to answer">Prefer not to Answer</option>
           </select>
         </div>
 
         <div>
           <label for="password">Age </label>
-          <input id="age" type="number" placeholder="age" name="Age" required />
+          <input id="age" type="number" placeholder="Enter Age" name="Age" required />
         </div>
 
         <div>
           <label for="password">Password </label>
-          <input id="pass" type="password" placeholder="password" name="password" required />
+          <input
+            id="signup-pass"
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+          />
         </div>
 
-        <button onclick="sinFun()" class="btn btn--form" type="submit" value="Log in">
-          Log in
+        <button
+          onclick="sinFun()"
+          class="btn btn--form"
+          id="signup-btn"
+          type="submit"
+          value="Log in"
+        >
+          Register
         </button>
       </form>
 
       <p id="account">
-        Don't have an account. <a id="signup-text" href="./login.html">Please Signup here!</a>
+        <a id="signup-text" href="./login.html">Already have an account. Login here!</a>
       </p>
     </div>
   </body>
