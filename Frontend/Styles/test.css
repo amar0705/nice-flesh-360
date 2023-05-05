@@ -29,6 +29,41 @@ body {
   justify-content: center;
   border-radius: 11px;
 }
+
+#signup-email {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#signup-gen {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#age {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#signup-pass {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
 .logocon {
   width: auto;
   /* margin: auto; */
@@ -43,6 +78,22 @@ body {
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
 }
+
+.logocon-signup {
+  width: auto;
+  /* margin: auto; */
+  /* margin-left: 10%; */
+  height: 600px;
+  /* padding: ; */
+  background-color: rgb(147, 192, 192);
+  margin-top: 3%;
+  /* margin-bottom: 5%; */
+  padding-top: 5%;
+  margin-top: 75px;
+
+  /* border-radius: 11px; */
+  /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
 .container {
   margin-top: 3%;
   /* margin-bottom: 5%; */
@@ -52,6 +103,20 @@ body {
   background-color: rgb(147, 192, 192);
   height: 500px;
   margin-top: 125px;
+
+  /* border-radius: 11px; */
+  /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
+
+.container-signup {
+  margin-top: 3%;
+  /* margin-bottom: 5%; */
+  width: 400px;
+  /* margin:auto; */
+  padding: 36px 48px 48px 48px;
+  background-color: rgb(147, 192, 192);
+  height: 600px;
+  margin-top: 75px;
 
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
@@ -99,6 +164,17 @@ body > div {
   row-gap: 7px;
 }
 
+.signup-form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.login-form-signup {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 7px;
+}
+
 .login-form label {
   display: block;
   margin-bottom: 8px;
@@ -127,6 +203,10 @@ body > div {
     Verdana, sans-serif;
 }
 
+#signup-btn {
+  margin-top: 35px;
+}
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -140,7 +220,6 @@ body > div {
     Verdana, sans-serif;
   cursor: pointer;
   font-family: inherit;
-
   transition: all 0.3s;
 }
 
