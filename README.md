@@ -15,7 +15,8 @@
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
-### 2. CRUD Operations
+### 2. 
+
 
 ## Backend:
 ### 1. Login / Signup User Data
