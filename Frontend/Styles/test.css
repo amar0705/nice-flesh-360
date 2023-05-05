@@ -7,6 +7,9 @@
 html,
 body {
   height: 100%;
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 html {
@@ -30,7 +33,7 @@ body {
   width: auto;
   /* margin: auto; */
   /* margin-left: 10%; */
-
+  height: 500px;
   /* padding: ; */
   background-color: rgb(147, 192, 192);
   margin-top: 3%;
@@ -47,9 +50,15 @@ body {
   /* margin:auto; */
   padding: 36px 48px 48px 48px;
   background-color: rgb(147, 192, 192);
+  height: 500px;
+  margin-top: 125px;
 
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
+
+body > div {
+  border-radius: 20px;
 }
 
 #gen {
@@ -71,6 +80,8 @@ body {
 #account {
   font-size: 15px;
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .login-title {
@@ -78,17 +89,21 @@ body {
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .login-form {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 16px;
+  row-gap: 7px;
 }
 
 .login-form label {
   display: block;
   margin-bottom: 8px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .login-form input {
@@ -104,10 +119,12 @@ body {
 }
 
 .btn--form {
-  background-color: #22b49c;
-  color: #dadd1f;
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+  color: black;
   align-self: end;
   padding: 8px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .btn,
@@ -119,7 +136,8 @@ body {
   font-weight: 600;
   border-radius: 9px;
   border: none;
-
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
   cursor: pointer;
   font-family: inherit;
 
@@ -127,7 +145,7 @@ body {
 }
 
 button {
-  outline: 1px solid #f48982;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .btn--form:hover {
@@ -167,6 +185,7 @@ form {
   .logocon {
     width: auto;
     display: none;
+    margin-top: 190px;
     /* margin: auto; */
     /* margin-left: 10%; */
 
@@ -251,4 +270,8 @@ form {
     background-color: #fdf2e9;
     color: #f48982;
   }
+}
+
+#login-image {
+  margin-top: 125px;
 }
