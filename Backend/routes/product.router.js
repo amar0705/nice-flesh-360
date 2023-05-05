@@ -8,7 +8,7 @@ product.get("/", async (req, res) => {
   try {
     let product = await ProductModel.find()
     // console.log(data)
-    res.status(200).send(product)
+    res.status(200).send({product})
   } catch (err) {
     return res.status(404).send(err.message);
   }
@@ -97,7 +97,7 @@ product.get("/Cream", async (req, res) => {
 product.post("/", async (req, res) => {
   try {
     const product = await ProductModel.create(req.body);
-    return res.send(product);
+    return res.send({msg:"Product updated"});
   } catch (err) {
     return res.status(404).send(err.message);
   }
@@ -120,7 +120,7 @@ product.patch("/:id", async (req, res) => {
 product.delete("/:id", async (req, res) => {
   try {
     const product = await ProductModel.findByIdAndDelete(req.params.id, req.body)
-    return res.send(`Record with Product id ${req.params.id} is deleted successfully`);
+    return res.send({msg:"Product deleted"});
   } catch (err) {
     return res.status(404).send(err.message);
   }
