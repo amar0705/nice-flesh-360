@@ -2,7 +2,7 @@ const express=require('express');
 const {StylistModel}=require('../models/Stylists.model');
 const stylist=express.Router();
 
-
+//-------------->>>> GET all Stylists<<<<<----------------
 stylist.get("/",async(req,res)=>{
     let data= await StylistModel.find()
     res.status(200).send(
@@ -10,6 +10,8 @@ stylist.get("/",async(req,res)=>{
     )
 })
 
+
+//-------------->>>> GET male Stylists<<<<<----------------
 stylist.get("/male",async(req,res)=>{
     try{
     let data= await StylistModel.aggregate([{ $match: { Styler: "male" } }])
@@ -22,6 +24,8 @@ stylist.get("/male",async(req,res)=>{
     }
 })
 
+
+//-------------->>>> GET female Stylists<<<<<----------------
 stylist.get("/female",async(req,res)=>{
     try{
     let data= await StylistModel.aggregate([{ $match: { Styler: "female" } }])

@@ -8,8 +8,8 @@ const AppointmentSchema=mongoose.Schema({
     time:String,
     style_name:String,
     styler_name:String,
-    status:{type:String,default:"Confirmed",
-    enum:["Confirmed","Cancelled"]
+    status:{type:String,default:"Pending",
+    enum:["Pending","Confirmed","Cancelled"]
 }
 })
 
