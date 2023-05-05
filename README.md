@@ -17,6 +17,7 @@
 ### 1. Stylist data (Booking): Cancel/ Approval
 ### 2. Product(items): Rendering
 ### 3. Product(items): CRUD operation
+### 4. Product: have direct access with DB 
 
 
 ## Backend:
