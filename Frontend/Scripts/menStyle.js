@@ -23,7 +23,7 @@ let baseurl="http://localhost:8080"
             return getasCard(item)
         }).join(" ")}
         `
-        // booknow()
+        booknow()
         }
 
 
@@ -44,21 +44,23 @@ let baseurl="http://localhost:8080"
 
 
 
-    // function booknow(){
-    // let book = document.querySelectorAll('.btn')
+    function booknow(){
+    let book = document.querySelectorAll('.btn')
+    for(let btn of book){
+    btn.addEventListener("click",(e)=>{
+    alert(e.target.dataset.id)
+    let style
 
-    // for(let btn of book){
-    // btn.addEventListener("click",(e)=>{
-    // console.log(e.target.dataset.id)
-    // popup.classList.toggle("show");
-    // })
-    // } 
-    // }
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]._id==e.target.dataset.id){
+            style = arr[i]
+        
+        }
+    }
 
-    // let popup = document.querySelector(".popup")
-    // let closed = document.querySelector(".close")
-    
+    localStorage.setItem("style", JSON.stringify(style))
+    window.location.href="MensStylist.html"
+    })
+    } 
+    }
 
-    //     closed.onclick = ()=>{
-    //     popup.classList.remove("show");
-    //     }

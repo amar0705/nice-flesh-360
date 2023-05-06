@@ -1,5 +1,6 @@
 let baseurl="http://localhost:8080"
 const token=localStorage.getItem("token")
+
 const stylearr=localStorage.getItem("style")
 var stylistArea=document.getElementById("main-cont")
 let arr
@@ -101,7 +102,7 @@ let obj={
     method: "POST",
     headers:{
       "content-type": "application/json",
-      "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+      "authorization": token
     },
     body: JSON.stringify(obj)
   }).then((res)=>res.json())

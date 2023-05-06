@@ -1,4 +1,5 @@
 let baseurl="http://localhost:8080"
+const token=localStorage.getItem("token")
 let container=document.getElementById("cont")
 let arr
 
@@ -8,7 +9,7 @@ fetchdata()
 async function fetchdata(){
 let res= await fetch(`${baseurl}/appointment/users`,{
     headers:{
-        "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+        "authorization":token
     }
 })
 let data= await res.json()
@@ -51,7 +52,7 @@ function getdata(data){
 			<p>Appointment Date - ${item.date}</p>
 			<p>Timmings - ${item.time}</p>
 			</div><br>
-      ${item.status==="Confirmed"?
+      ${item.status==="Pending"?
 			`<div class="btn">
 				 <center><p data-id=${item._id} class="cancel">Cancel</p></center>
 			</div><br>`:`` }
@@ -82,7 +83,7 @@ function getdata(data){
         method:'DELETE',
         headers:{
           "content-type": "application/json",
-          "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+          "authorization":token
         }
       })
       if (res.ok) {
