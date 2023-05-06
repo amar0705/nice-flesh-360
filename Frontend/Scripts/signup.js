@@ -6,13 +6,12 @@ const btn= document.getElementById("login")
     e.preventDefault()
     let name= document.getElementById("name").value
       let age= document.getElementById("age").value
-      let gen= document.getElementById("gen").value
-     let email= document.getElementById("email").value
-     let pass= document.getElementById("pass").value
-      let role=document.getElementById("role").value
-    //   console.log(name)
+      let gen= document.getElementById("signup-gen").value
+     let email= document.getElementById("signup-email").value
+     let password= document.getElementById("signup-pass").value
+      console.log(name)
     const payload = {
-      name,age,gen,email,pass
+      name,age,gen,email,password
 
     };
     fetch(`${baseurl}/users/signup`, {
@@ -23,9 +22,15 @@ const btn= document.getElementById("login")
       body: JSON.stringify(payload),
     })
       .then((res) => res.json())
-    .then((data)=>
-    alert ("Signup success")
-    )
+    .then((res)=>{
+    if(res.msg=="register successfully"){
+      alert ("Register success")
+      window.location.href = "login.html"
+    }
+    else {
+      alert ("Already registered")
+    }
+   } )
       .catch((err) => console.log(err))
 
  })

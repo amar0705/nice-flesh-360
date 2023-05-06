@@ -9,6 +9,7 @@ fetchdata()
 async function fetchdata(){
 let res= await fetch(`${baseurl}/appointment/users`,{
     headers:{
+      "content-type": "application/json",
         "authorization":token
     }
 })
