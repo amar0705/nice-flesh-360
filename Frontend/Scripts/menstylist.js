@@ -1,6 +1,7 @@
 let baseurl="http://localhost:8080"
 const token=localStorage.getItem("token")
-const stylearr=localStorage.getItem("style")
+const stylearr= JSON.parse(localStorage.getItem("style"))
+console.log(stylearr)
 var stylistArea=document.getElementById("main-cont")
 let arr
 let stylist
@@ -96,14 +97,14 @@ let obj={
   date,time,
   styler_name:stylist.Stylists_name,
   stylist_id:stylist._id,
-  style_name:"ffj",
-  style_id:""
+  style_name:stylearr.Name,
+  style_id:stylearr._id
 }
   fetch(`${baseurl}/appointment/new`,{
     method: "POST",
     headers:{
       "content-type": "application/json",
-      "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+      "authorization": token
     },
     body: JSON.stringify(obj)
   }).then((res)=>res.json())

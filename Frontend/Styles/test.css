@@ -7,6 +7,9 @@
 html,
 body {
   height: 100%;
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 html {
@@ -26,16 +29,67 @@ body {
   justify-content: center;
   border-radius: 11px;
 }
+
+#signup-email {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#signup-gen {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#age {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#signup-pass {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
 .logocon {
   width: auto;
   /* margin: auto; */
   /* margin-left: 10%; */
-
+  height: 500px;
   /* padding: ; */
   background-color: rgb(147, 192, 192);
   margin-top: 3%;
   /* margin-bottom: 5%; */
   padding-top: 5%;
+
+  /* border-radius: 11px; */
+  /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
+
+.logocon-signup {
+  width: auto;
+  /* margin: auto; */
+  /* margin-left: 10%; */
+  height: 600px;
+  /* padding: ; */
+  background-color: rgb(147, 192, 192);
+  margin-top: 3%;
+  /* margin-bottom: 5%; */
+  padding-top: 5%;
+  margin-top: 75px;
 
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
@@ -47,9 +101,29 @@ body {
   /* margin:auto; */
   padding: 36px 48px 48px 48px;
   background-color: rgb(147, 192, 192);
+  height: 500px;
+  margin-top: 125px;
 
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
+
+.container-signup {
+  margin-top: 3%;
+  /* margin-bottom: 5%; */
+  width: 400px;
+  /* margin:auto; */
+  padding: 36px 48px 48px 48px;
+  background-color: rgb(147, 192, 192);
+  height: 600px;
+  margin-top: 75px;
+
+  /* border-radius: 11px; */
+  /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
+}
+
+body > div {
+  border-radius: 20px;
 }
 
 #gen {
@@ -71,6 +145,8 @@ body {
 #account {
   font-size: 15px;
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .login-title {
@@ -78,17 +154,38 @@ body {
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 .login-form {
   display: grid;
   grid-template-columns: 1fr;
+
   row-gap: 10px;
+
+  row-gap: 7px;
+}
+
+.signup-form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.login-form-signup {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 7px;
+
 }
 
 .login-form label {
   display: block;
-  margin-bottom: 2px;
+
+  margin-bottom: 8px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+
 }
 
 .login-form input {
@@ -104,10 +201,20 @@ body {
 }
 
 .btn--form {
-  background-color: #22b49c;
-  color: #dadd1f;
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+  color: black;
   align-self: end;
+
   padding: 4px;
+
+  padding: 8px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+}
+
+#signup-btn {
+  margin-top: 35px;
+
 }
 
 .btn,
@@ -119,15 +226,18 @@ body {
   font-weight: 600;
   border-radius: 9px;
   border: none;
-
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
   cursor: pointer;
   font-family: inherit;
-
   transition: all 0.3s;
 }
 
 button {
+
   outline: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .btn--form:hover {
@@ -167,6 +277,7 @@ form {
   .logocon {
     width: auto;
     display: none;
+    margin-top: 190px;
     /* margin: auto; */
     /* margin-left: 10%; */
 
@@ -251,4 +362,8 @@ form {
     background-color: #fdf2e9;
     color: #f48982;
   }
+}
+
+#login-image {
+  margin-top: 125px;
 }

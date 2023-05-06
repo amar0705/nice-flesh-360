@@ -1,7 +1,7 @@
-
-const baseUrl ="http://localhost:8080";
- ///api fetch
- mainFunction();
+const baseUrl = "http://localhost:8080";
+let BuyItems = JSON.parse(localStorage.getItem("items")) || [];
+///api fetch
+mainFunction();
 
 async function mainFunction() {
   try {
@@ -9,101 +9,101 @@ async function mainFunction() {
     let res = await fetch(`${baseUrl}/product`);
 
     let data = await res.json();
-     //console.log(data)
+    //console.log(data)
 
-     displayProduct(data);
-     
-     let WomenData = await fetch(`${baseUrl}/product/women`);
+    displayProduct(data.product);
 
-     let Women = await WomenData.json();
-    
-     let MenData = await fetch(`${baseUrl}/product/men`);
+    let WomenData = await fetch(`${baseUrl}/product/women`);
 
-     let Men = await MenData.json();
+    let Women = await WomenData.json();
 
-     let HairKitData = await fetch(`${baseUrl}/product/HairKit`);
+    let MenData = await fetch(`${baseUrl}/product/men`);
 
-     let HairKit = await HairKitData.json();
+    let Men = await MenData.json();
 
-     let ComboData = await fetch(`${baseUrl}/product/Combo`);
+    let HairKitData = await fetch(`${baseUrl}/product/HairKit`);
 
-     let Combo = await ComboData.json();
+    let HairKit = await HairKitData.json();
 
-     let HairData = await fetch(`${baseUrl}/product/Hair`);
+    let ComboData = await fetch(`${baseUrl}/product/Combo`);
 
-     let Hair = await HairData.json();
+    let Combo = await ComboData.json();
 
-     let MINIATUREData = await fetch(`${baseUrl}/product/MINIATURE`);
+    let HairData = await fetch(`${baseUrl}/product/Hair`);
 
-     let MINIATURE = await MINIATUREData.json();
+    let Hair = await HairData.json();
 
-     let CreamData = await fetch(`${baseUrl}/product/Cream`);
+    let MINIATUREData = await fetch(`${baseUrl}/product/MINIATURE`);
 
-     let Cream = await CreamData.json();
+    let MINIATURE = await MINIATUREData.json();
 
-//Filter by category and type
-     document.querySelector(".WomenSort").addEventListener("click", function () {
+    let CreamData = await fetch(`${baseUrl}/product/Cream`);
+
+    let Cream = await CreamData.json();
+
+    //Filter by category and type
+    document.querySelector(".WomenSort").addEventListener("click", function () {
       sort_by_women(Women);
-            
-     })
 
-     document.querySelector(".MenSort").addEventListener("click", function () {
+    })
+
+    document.querySelector(".MenSort").addEventListener("click", function () {
       sort_by_men(Men);
-            
-     })
 
-     document.querySelector(".HairKit").addEventListener("click", function () {
+    })
+
+    document.querySelector(".HairKit").addEventListener("click", function () {
       filter_by_HairKit(HairKit);
-            
-     })
 
-     document.querySelector(".Combo").addEventListener("click", function () {
+    })
+
+    document.querySelector(".Combo").addEventListener("click", function () {
       sort_by_men(Combo);
-            
-     })
 
-     document.querySelector(".Hair").addEventListener("click", function () {
+    })
+
+    document.querySelector(".Hair").addEventListener("click", function () {
       sort_by_women(Hair);
-            
-     })
 
-     document.querySelector(".MINIATURE").addEventListener("click", function () {
+    })
+
+    document.querySelector(".MINIATURE").addEventListener("click", function () {
       sort_by_men(MINIATURE);
-            
-     })
 
-      document.querySelector(".Cream").addEventListener("click", function () {
+    })
+
+    document.querySelector(".Cream").addEventListener("click", function () {
       sort_by_men(Cream);
-            
-     })
-///sorting
-     document.querySelector(".dis_low").addEventListener("click", function () {
-       sort_dis_price(data);
-       
-      })
-      
-      document.querySelector(".dis_high").addEventListener("click", function () {
-        sort_dis_high(data);
-        
-      })
-      
-      document.querySelector(".low").addEventListener("click", function () {
-        sort_price(data);
-      
-      })
-  
-      document.querySelector(".high").addEventListener("click", function () {
-        sort_price_high(data);
-      
-      })
+
+    })
+    ///sorting
+    document.querySelector(".dis_low").addEventListener("click", function () {
+      sort_dis_price(data.product);
+
+    })
+
+    document.querySelector(".dis_high").addEventListener("click", function () {
+      sort_dis_high(data.product);
+
+    })
+
+    document.querySelector(".low").addEventListener("click", function () {
+      sort_price(data.product);
+
+    })
+
+    document.querySelector(".high").addEventListener("click", function () {
+      sort_price_high(data.product);
+
+    })
     document.querySelector(".rating_low").addEventListener("click", function () {
-      sort_rating(data);
-    
+      sort_rating(data.product);
+
     })
 
     document.querySelector(".rating_high").addEventListener("click", function () {
-      sort_rating_high(data);
-    
+      sort_rating_high(data.product);
+
     })
   }
   catch (error) {
@@ -112,15 +112,15 @@ async function mainFunction() {
 }
 
 function displayProduct(data) {
-//Render in the form of card
+  //Render in the form of card
   data.map(function (ele) {
     let container = document.createElement("div");
-//image 
+    //image 
     let img = document.createElement("img")
     img.setAttribute("src", ele.img);
     img.setAttribute("class", "proClass")
 
-//title
+    //title
     let name_div = document.createElement("div")
     name_div.setAttribute("class", "name_pro_div");
     let title = document.createElement("h2");
@@ -129,7 +129,7 @@ function displayProduct(data) {
     title.setAttribute("class", "proname");
 
 
-//category
+    //category
     let category = document.createElement("p");
     category.textContent = ele.category;
     category.setAttribute("class", "quantity");
@@ -137,7 +137,7 @@ function displayProduct(data) {
     let rating_div = document.createElement("div");
     rating_div.setAttribute("class", "div5")
     let rating = document.createElement("p");
-    rating.textContent = `${ele.rating} ★`;
+    rating.textContent = `${ele.rating}★`;
 
     rating.setAttribute("class", "rating");
     rating_div.append(rating);
@@ -150,19 +150,26 @@ function displayProduct(data) {
     let span = document.createElement("span");
     span.innerText = `${ele.discount}%off`;
     mrp_price.append(span2, span);
-  
+
     span.setAttribute("class", "dis");
 
     let price = document.createElement("p");
     price.textContent = "₹" + ele.price;
     price.setAttribute("class", "price")
 
-
-    container.append(img, name_div, category, rating_div, mrp_price, price);
+    let Buy = document.createElement("button");
+    Buy.innerText = "Buy";
+    Buy.classList = "Buy";
+    Buy.addEventListener("click", () => {
+      BuyItems.push(ele)
+      localStorage.setItem("items",JSON.stringify(BuyItems));
+      window.location.href = "payment.html";
+    })
+    container.append(img, name_div, category, rating_div, mrp_price, price, Buy);
 
     document.querySelector("#all_products").append(container);
 
-//store details for new page
+    //store details for new page
     let data_send = {
       img: ele.img,
       name_div: ele.title,
@@ -173,68 +180,58 @@ function displayProduct(data) {
       price: ele.price,
       category: ele.category,
       type: ele.type,
-     
 
     }
-    // console.log(data_send)
-  //   container.onclick = () => {
-  //     showproduct(data_send)
-  //   }
-
+   
   });
 }
-//redirect to next  page
-// function showproduct(data) {
-//   localStorage.setItem('saveData', JSON.stringify(data));
-//   window.location.href = "/"
-// }
 
 // WoMen category
-function sort_by_women(Women){
+function sort_by_women(Women) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(Women);
 }
 
 // Men category
-function sort_by_men(men){
+function sort_by_men(men) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(men);
 }
 
 // filter_by_HairKit
-function filter_by_HairKit(HairKit){
+function filter_by_HairKit(HairKit) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(HairKit);
 }
 
 // filter_by_Combo
-function filter_by_Combo(Combo){
+function filter_by_Combo(Combo) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(Combo);
 }
 
 // filter_by_Hair
-function filter_by_Hair(Hair){
+function filter_by_Hair(Hair) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(Hair);
 }
 
 // filter_by_MINIATURE
-function filter_by_MINIATURE(MINIATURE){
+function filter_by_MINIATURE(MINIATURE) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(MINIATURE);
 }
 
 // filter_by_Cream
-function filter_by_Cream(Cream){
+function filter_by_Cream(Cream) {
   document.querySelector("#all_products").innerHTML = null
- 
+
   displayProduct(Cream);
 }
 
@@ -244,7 +241,7 @@ function sort_price(data) {
   data.sort(function (a, b) {
     console.log(a.price)
     return Number(a.price) - Number(b.price);
-     
+
   })
   displayProduct(data);
 }
@@ -296,5 +293,5 @@ function sort_rating_high(data) {
     //  console.log(a.price)
   })
   displayProduct(data);
-} 
+}
 

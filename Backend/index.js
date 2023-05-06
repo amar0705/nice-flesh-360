@@ -1,8 +1,7 @@
 const express=require('express');
-const app = express();
-app.use(express.json());
 const cors = require('cors')
-app.use(cors())
+const cookieParser = require('cookie-parser')
+
 require("dotenv").config();
 
 const {connection}=require('./config/db')
@@ -15,13 +14,22 @@ const {appointment}=require('./routes/Appointment.router')
 const {styleRouter} =require('./routes/style.router')
 const {admin} =require('./routes/admin.router')
 
+const app = express();
+app.use(express.json());
+app.use(cookieParser())
+app.use(cors())
 
 app.use("/admin",admin)
 app.use("/stylist",stylist)
 app.use("/appointment",appointment)
 app.use("/product",product)
+
 app.use("/users",userRouter)
 app.use("style",styleRouter)
+
+app.use("/user",userRouter)
+app.use("/style",styleRouter)
+
 
 
 

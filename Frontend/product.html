@@ -6,10 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/product.css" />
     <link rel="icon" href="" />
+    <link rel="stylesheet" href="./Styles/index.css" />
     <title>Product Page</title>
   </head>
 
   <body>
+    <div id="navbar">
+      <header>
+        <div class="nav-wrapper">
+          <div class="logo-container">
+            <img class="logo" src="./assets/SALONLEX-removebg-preview.png" alt="Logo" />
+          </div>
+          <nav>
+            <input class="hidden" type="checkbox" id="menuToggle" />
+            <label class="menu-btn" for="menuToggle">
+              <div class="menu"></div>
+              <div class="menu"></div>
+              <div class="menu"></div>
+            </label>
+            <div class="nav-container">
+              <ul class="nav-tabs">
+                <li class="nav-tab"><a href="./product.html">Products</a></li>
+                <li class="nav-tab">Services</li>
+                <li class="nav-tab">Contact</li>
+                <li class="nav-tab"><a href="./login.html">Login</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
     <div id="main">
       <div>
         <div id="filterbar">
@@ -17,48 +43,24 @@
           <div id="brand_div">
             <p id="brand_div_option" class="HairKit">Hair Kit</p>
             <p id="brand_div_option" class="Combo">Combo</p>
-            <p id="brand_div_option" class="Hair">Hair </p>
-            <p id="brand_div_option" class="MINIATURE">MINIATURE </p>
+            <p id="brand_div_option" class="Hair">Hair</p>
+            <p id="brand_div_option" class="MINIATURE">MINIATURE</p>
             <p id="brand_div_option" class="Cream">Cream</p>
           </div>
           <p id="left_header">Discount</p>
           <div id="discount_div">
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="dis_low">Low To High</span>
-            </p>
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="dis_high">High To Low</span>
-            </p>
+            <p><span></span><span id="brand_div_option" class="dis_low">Low To High</span></p>
+            <p><span></span><span id="brand_div_option" class="dis_high">High To Low</span></p>
           </div>
           <p id="left_header">Price</p>
           <div id="discount_div">
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="low">Low To High</span>
-            </p>
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="high">High To Low</span>
-            </p>
+            <p><span></span><span id="brand_div_option" class="low">Low To High</span></p>
+            <p><span></span><span id="brand_div_option" class="high">High To Low</span></p>
           </div>
           <p id="left_header">Rating</p>
           <div id="discount_div">
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="rating_low" >Low To High</span>
-            </p>
-            <p>
-              <span
-                ></span
-              ><span id="brand_div_option" class="rating_high" >High To Low</span>
-            </p>
+            <p><span></span><span id="brand_div_option" class="rating_low">Low To High</span></p>
+            <p><span></span><span id="brand_div_option" class="rating_high">High To Low</span></p>
           </div>
         </div>
       </div>
@@ -84,7 +86,7 @@
 
         <p id="brands_head">All Products</p>
         <div id="all_products">
-            <!-- display product here -->
+          <!-- display product here -->
         </div>
       </div>
     </div>

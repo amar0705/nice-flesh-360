@@ -7,15 +7,22 @@
 ### 3. Service page (Redis) / Stylist Page (Redis) / Styles Page (Redis)
 ### 4. Appointment Page / Payment Page
 ### 5. ecommerce page / Product Page
-### 6. Appointment time Drop down
-### 7. Appointment Confirmation
+### 6. Add to buy button functionality
+### 7. Appointment time Drop down
+### 8. Appointment Confirmation
 
 #### Optional: 
 ### 1. OTP
+### 2. Mail
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
-### 2. CRUD Operations
+### 2. Dashboard: Records , admin details
+### 3. Add Product Page: Rendering product list also Add new product
+### 4. Manage Product Page: CRUD operation
+### 5. Manage Appointment Page 
+### 6. connection with DB: have direct access with DB in real time 
+
 
 ## Backend:
 ### 1. Login / Signup User Data

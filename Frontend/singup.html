@@ -5,56 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup Tab</title>
-    
+    <link
+      rel="stylesheet"
+      href="https://files.slack.com/files-pri/T050D73RQLF-F055GLP871U/salonlex.png"
+    />
     <link rel="stylesheet" href="./Styles/test.css" />
   </head>
   <body>
-    <div class="logocon" style="border: px black solid">
-      <img style="height: 300px; width: 300px" src="./image/TheWaywardHairdresser.gif" alt="gif" />
+    <div class="logocon-signup" style="border: px black solid">
+      <img src="./image/TheWaywardHairdresser.gif" alt="gif" />
       <a href="./"></a>
     </div>
 
-    <div class="container" style="border: solid red px">
-      <h2 class="login-title">Register</h2>
+    <div class="container-signup" style="border: solid red px">
+      <h2 class="login-title">Register Here!</h2>
 
-      < class="login-form">
-        <div>
-            <label for="email">Name </label>
-            <input id="name" type="name" placeholder="your name" name="Name" required />
-          </div>
-        
+      <form class="signup-form">
         <div>
           <label for="email">Email </label>
-          <input id="email" type="email" placeholder="me@example.com" name="email" required />
+          <input
+            id="signup-email"
+            type="email"
+            placeholder="me@example.com"
+            name="email"
+            required
+          />
         </div>
 
         <div>
           <label for="gender">Gender:</label>
-          <select name="gender" id="gen">
+          <select name="gender" id="signup-gen">
             <option value="">Please select one…</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
             <option value="non-binary">Non-Binary</option>
             <option value="other">Other</option>
-            <option value="Prefer not to answer">Perfer not to Answer</option>
+            <option value="Prefer not to answer">Prefer not to Answer</option>
           </select>
         </div>
 
         <div>
           <label for="password">Age </label>
-          <input id="age" type="number" placeholder="age" name="Age" required />
+          <input id="age" type="number" placeholder="Enter Age" name="Age" required />
         </div>
-
-        <div>
-            <label for="password">role </label>
-            <input id="role" type="text" placeholder="role" name="role" required />
-          </div>
-  
 
         <div>
           <label for="password">Password </label>
-          <input id="pass" type="password" placeholder="password" name="password" required />
+          <input
+            id="signup-pass"
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+          />
         </div>
+
 
         <button id="login" class="btn btn--form"  value="Log in">
           Log in
@@ -62,7 +67,7 @@
     </div>
 
       <p id="account">
-        Don't have an account. <a id="signup-text" href="./login.html">Please Signup here!</a>
+        <a id="signup-text" href="./login.html">Already have an account. Login here!</a>
       </p>
     </div>
   </body>

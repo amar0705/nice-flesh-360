@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="./Styles/test.css" />
   </head>
   <body>
-    <div class="logocon" style="border: px black solid">
-      <img style="height: 300px; width: 300px" src="../Frontend/image/login.gif" alt="gif" />
+    <div id="login-image" class="logocon" style="border: px black solid">
+      <img style="height: 350px; width: 300px" src="./image/login.gif" alt="gif" />
     </div>
 
     <div class="container" style="border: solid red px">
-      <h2 class="login-title">Log in</h2>
+      <h2 class="login-title">Login</h2>
 
       <form class="login-form">
         <div>
@@ -27,16 +27,22 @@
 
         <div>
           <label for="password">Password </label>
-          <input id="pass" type="password" placeholder="password" name="password" required />
+          <input id="pass" type="password" placeholder="Enter Password" name="password" required />
         </div>
         <br />
+
        
         <button id="log" class="btn btn--form"  value="Log in">
             Log in
           </button>
+
       </form>
-      <p id="account">Create an <a id="login-text" href="./singup.html">account</a></p>
+      <p id="account">
+        <a id="login-text" href="./singup.html"> Don't have an account? Create an account</a>
+      </p>
     </div>
   </body>
 </html>
+
 <script src="./Scripts/login.js"></script>
+

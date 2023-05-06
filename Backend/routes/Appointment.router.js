@@ -29,6 +29,17 @@ appointment.get("/users",authenticate,async (req,res) =>{
     }
 })
 
+//------------->>>>>>>>  Get Appointments by stylists  <<<<<<<<------------
+appointment.get("/stylist/:id",authenticate,async (req,res) =>{
+    const id=req.params.id;
+    try {
+        const data=await AppointmentModel.find({stylist_id:id});
+        res.status(200).send(data);
+    } catch (error) {
+        console.log(error.message);
+        res.status(404).send({Message:"Bad request 404! unable to fetch the data"});
+    }
+})
 
 
 // --------->>>> POST <<<<<---------
@@ -70,4 +81,7 @@ appointment.delete("/delete/:id",authenticate,async(req,res)=>{
     }
 })
 
-module.exports = {  appointment}
+
+
+
+module.exports = { appointment}

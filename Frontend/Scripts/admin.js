@@ -32,10 +32,10 @@ async function Fetch_admin() {
 //render admin details 
 Fetch_admin();
 
-let Admin_data = JSON.parse(localStorage.getItem("admin_data"));
+// let Admin_data = JSON.parse(localStorage.getItem("admin_data"));
 // displayCards(Admin_data);
 
-document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
+// document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
 
 countData();
 
@@ -52,8 +52,8 @@ async function countData() {
         );
         // .headers.get( "X-Total-Count" )
         let data = await api_data.json();
-        document.getElementById("totalApicount").innerText = data.length;
-        document.getElementById("NewlyAdd").innerText = localStorage.getItem("count") || 0;
+        document.getElementById("totalApicount").innerText = data.product.length;
+        // document.getElementById("NewlyAdd").innerText = localStorage.getItem("count") || 0;
         document.getElementById("TotalEdited").innerText = localStorage.getItem("editcount") || 0;
         document.getElementById("TotalDelete").innerText = localStorage.getItem("deletecount") || 0;
 
@@ -63,8 +63,8 @@ async function countData() {
     }
 }
 
-userDetailss();
-function userDetailss() {
+// userDetails();
+function userDetails() {
     let admin = JSON.parse(localStorage.getItem("admin"));
     let cont = document.getElementById("admin_name");
     let cont2 = document.getElementById("img-admin");
