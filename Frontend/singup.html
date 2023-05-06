@@ -60,16 +60,11 @@
           />
         </div>
 
-        <button
-          onclick="sinFun()"
-          class="btn btn--form"
-          id="signup-btn"
-          type="submit"
-          value="Log in"
-        >
-          Register
+
+        <button id="login" class="btn btn--form"  value="Log in">
+          Log in
         </button>
-      </form>
+    </div>
 
       <p id="account">
         <a id="signup-text" href="./login.html">Already have an account. Login here!</a>
@@ -78,23 +73,7 @@
   </body>
 </html>
 
-<script>
-  const sinFun = () => {
-    const payload = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      pass: document.getElementById("pass").value,
-      age: document.getElementById("age").value,
-      gen: document.getElementById("gen").value,
-    };
-    fetch("http://localhost:8080//user/register", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-</script>
+
+<script src="./Scripts/signup.js"></script>
+
+

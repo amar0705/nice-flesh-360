@@ -161,6 +161,9 @@ body > div {
 .login-form {
   display: grid;
   grid-template-columns: 1fr;
+
+  row-gap: 10px;
+
   row-gap: 7px;
 }
 
@@ -173,18 +176,21 @@ body > div {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 7px;
+
 }
 
 .login-form label {
   display: block;
+
   margin-bottom: 8px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
+
 }
 
 .login-form input {
   width: 100%;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 9px;
   border: none;
 }
@@ -198,6 +204,9 @@ body > div {
   background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
   color: black;
   align-self: end;
+
+  padding: 4px;
+
   padding: 8px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
@@ -205,6 +214,7 @@ body > div {
 
 #signup-btn {
   margin-top: 35px;
+
 }
 
 .btn,
@@ -224,12 +234,15 @@ body > div {
 }
 
 button {
+
+  outline: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .btn--form:hover {
   background-color: #fdf2e9;
-  color: #f48982;
+  color:rgb(39, 58, 56);
 }
 form {
   margin: 2em;
@@ -298,12 +311,12 @@ form {
   .login-form {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 16px;
+    row-gap: 5px;
   }
 
   .login-form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
 
   .login-form input {

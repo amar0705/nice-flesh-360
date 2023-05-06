@@ -9,3 +9,9 @@ const connection=mongoose.connect(process.env.mongourl)
 module.exports={
     connection
 }
+
+
+
+
+
+

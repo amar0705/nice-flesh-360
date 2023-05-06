@@ -1,12 +1,13 @@
-const authorise = (permit) =>{
-    return (req,res, next) =>{
-        const user_role = req.user.role;
-        if(permit.includes(user_role)) {
+const authorise=(arrayofRoles)=>{
+
+    return(req,res,next)=>{
+        const userrole=req.body.userrole
+        if(arrayofRoles.includes(userrole)){
             next()
         }else{
-            res.send('unauthorise')
+            res.status(200).send("not authorize")
         }
     }
 }
 
-module.exports = {authorise}
+module.exports={authorise}

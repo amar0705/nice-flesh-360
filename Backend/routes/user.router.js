@@ -1,51 +1,111 @@
-const express=require("express");
-const { usermodel } = require("../models/user.model");
-const jwt=require("jsonwebtoken")
-const bcrypt=require("bcrypt")
-const userRouter=express.Router();
-const app=express();
-app.use(express.json());
+const express = require("express");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const fs = require("fs");
+require("dotenv").config();
+const  {userModel} = require("../models/user.model");
 
 
 
-userRouter.post("/register",async(req,res)=>{
-    const {email,pass,name}=req.body;
+const userRouter = express.Router();
+
+
+userRouter.post("/signup",async(req,res)=>{
+   
     try {
-        bcrypt.hash(pass,5,async(err,hash)=>{
-            if(err){
-                res.send({msg:"something went wrong",error:err.message})
-            }else{
-                const User= new usermodel({name,email,pass:hash});
-            await User.save();
-            res.send({msg:"new user has been registered"})
-            }
-        })
+        const {name,email,password,age,gender}=req.body
+
+        const user=await userModel.findOne({email:email})
+        if(user){
+             res.status(200).send({msg:"you are alredy registered"})
+         }else{
+             bcrypt.hash(password,5,async(err,hash)=>{
+                 const main = new userModel({
+                    name,
+                    email,
+                     password:hash,
+                     age,
+                     gender
+             })
+                await main.save();
+                res.status(200).send({msg:"register successfully"})
+             });
+         }
+     } 
+    
+    catch (error) {
+        console.log(error)
+        res.status(401).send("bad requst")
+    }
+})
+
+//////////log in ///////////
+
+userRouter.post('/login', async(req, res) => {
+    try {
+        const { email, password} = req.body;
+
+        //find the user by username
+        const user = await userModel.findOne({email});
+        if(!user){
+            return res.status(401).json({message : 'Invalid user name'})
+        } 
         
-    } catch (error) {
-        res.send({msg:"something went wrong",error:error.message})
-    }
-})
-userRouter.post("/login",async(req,res)=>{
-    const {email,pass}=req.body;
-    try {
-        const user=await usermodel.find({email})
-        if(user.length>0){
-            bcrypt.compare(pass,user[0].pass,(err,result)=>{
-                if(result){
-                    const token=jwt.sign({email:email,userid:user[0]._id},"hell")
-                    res.send({"msg":'logged in',token:token})
-                }else{
-                    res.send({msg:"something went wrong"})
-                }
-            })
-        }else{
-            res.send({"msg":"wrong credentials"})
+        //comparing the password enterd by user
+        const isPasswordMatch = await bcrypt.compare(password, user.password);
+        if(!isPasswordMatch){
+            return res.status(401).json({message: "Invalid password"})
         }
+        // if username and password match from DB we'll create JWT token
+        const token = jwt.sign({userId: user._id}, process.env.mainseckey, {
+            expiresIn: 60
+        })
+
+        //Create Refresh JWT token
+        const refreshToken = jwt.sign({userId: user._id}, process.env.refseckey, {
+            expiresIn : 300
+        })
+
+        res.json({message: "Login Successful", token, refreshToken})
     } catch (error) {
-        res.send({msg:"something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
-module.exports={
-    userRouter
-}
+//////////log out ///////////
+
+userRouter.get("/logout",async(req,res)=>{
+    const token=req.headers.authorization?.split(" ")[1]
+    const blacklistdata=JSON.parse(fs.readFileSync("./blacklistdata.json","utf-8"))
+    blacklistdata.push(token)
+    fs.writeFileSync("./blacklistdata.json",JSON.stringify(blacklistdata))
+    res.status(200).send("user loged out succesfully")
+})
+//////////Get new token////////
+
+userRouter.get("/getnewtoken",async(req,res)=>{
+    var reftoken=req.header.authorization?.split(" ")[1]
+    if(!reftoken){
+        res.status(200).send("login again")
+
+    }else{
+        jwt.verify(reftoken, process.env.refseckey,async(error,decoded)=>{
+            if(error){
+                console.log(error);
+                res.status(200).send("login again")
+            }else if(decoded){
+                let user=decoded
+                var maintoken = jwt.sign({userID:user.userID,userrole:user.userrole}, process.env.mainseckey,{expiresIn:60});
+                res.send (200).send({"message":"user login succesfully",maintoken:maintoken}) 
+            }else{
+                console.log("error");
+                res.status(200).send("login again")
+            }
+        });
+    }
+})
+
+
+
+
+module.exports={userRouter}
