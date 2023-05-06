@@ -7,8 +7,9 @@
 ### 3. Service page (Redis) / Stylist Page (Redis) / Styles Page (Redis)
 ### 4. Appointment Page / Payment Page
 ### 5. ecommerce page / Product Page
-### 6. Appointment time Drop down
-### 7. Appointment Confirmation
+### 6. Add to buy button functionality
+### 7. Appointment time Drop down
+### 8. Appointment Confirmation
 
 #### Optional: 
 ### 1. OTP
