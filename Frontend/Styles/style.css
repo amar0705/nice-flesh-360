@@ -1,40 +1,99 @@
-
-html,
-body {
+*{
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f0f0f0;
-  background-image: url('https://www.timeoutabudhabi.com/cloud/timeoutabudhabi/2021/09/10/UIqEYGxW-barbershop4-1.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  /* background: #36768c; */
+  font-family: 'roboto', sans-serif;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+}
+.card{
+  width: 320px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 8px solid #fff;
+  position: relative;
+  margin: auto;
+}
+
+
+.card-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-body{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background: rgb(95,213,222);
+  background: linear-gradient(208deg, rgba(95,213,222,0.5803571428571428) 0%, rgba(251,211,29,0.6671918767507004) 100%);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: .5s;
+}
+
+.card:hover .card-body{
+  right: 0;
+}
+
+.card-title{
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 500;
 }
 
 .main{
-    width: 100%;
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 150px;
+  margin-top: 50px;
 }
-#container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 2rem;
-    width: 80%;
-    margin: auto;
-}
-.card{
-    width: 100%;
-/* eight: 500px; */
-    position: relative;
-    overflow-y: hidden;
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 0.25rem;
-  }
 
-  
-  .btn{
-    display: block; 
-    /* margin: auto; */
-   }
+#container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  /* width: 80%; */
+  margin: auto;
+} 
+
+.card-sub-title{
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.card-info{
+  font-size: 16px;
+  line-height: 25px;
+  margin: 40px 0;
+  font-weight: 400;
+}
+
+.card-btn{
+  color: #1f3d47;
+  background: #8fabba;
+  padding: 10px 20px;
+  width: 120px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+}

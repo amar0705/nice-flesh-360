@@ -29,15 +29,15 @@ let baseurl="http://localhost:8080"
 
     function getasCard(item){
         return `
-        <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=${item.Image} alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">${item.Name}</h5>
-                <p class="card-text">${item.Price}</p>
-                <p class="card-gender">${item.Gender}</p>
-                 <button data-id= ${item._id} class="btn btn-primary">Book Now</button>
-                </div>
+        <div class="card">
+            <img src=${item.Image} class="card-img" alt="">
+            <div class="card-body">
+                <h1 class="card-title">${item.Name}</h1>
+                <p class="card-sub-title">${item.Price}</p>
+                <p class="card-info">${item.Gender}</p>
+                <button data-id= ${item._id} class="card-btn">Book Now</button>
             </div>
+        </div> 
         `
     }
 
