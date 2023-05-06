@@ -11,7 +11,7 @@ async function mainFunction() {
     let data = await res.json();
      //console.log(data)
 
-     displayProduct(data);
+     displayProduct(data.product);
      
      let WomenData = await fetch(`${baseUrl}/product/women`);
 
@@ -78,31 +78,31 @@ async function mainFunction() {
      })
 ///sorting
      document.querySelector(".dis_low").addEventListener("click", function () {
-       sort_dis_price(data);
+       sort_dis_price(data.product);
        
       })
       
       document.querySelector(".dis_high").addEventListener("click", function () {
-        sort_dis_high(data);
+        sort_dis_high(data.product);
         
       })
       
       document.querySelector(".low").addEventListener("click", function () {
-        sort_price(data);
+        sort_price(data.product);
       
       })
   
       document.querySelector(".high").addEventListener("click", function () {
-        sort_price_high(data);
+        sort_price_high(data.product);
       
       })
     document.querySelector(".rating_low").addEventListener("click", function () {
-      sort_rating(data);
+      sort_rating(data.product);
     
     })
 
     document.querySelector(".rating_high").addEventListener("click", function () {
-      sort_rating_high(data);
+      sort_rating_high(data.product);
     
     })
   }

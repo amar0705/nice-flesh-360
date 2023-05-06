@@ -1,7 +1,7 @@
 
-let data = JSON.parse(localStorage.getItem("admin_data"));
+// let data = JSON.parse(localStorage.getItem("admin_data"));
 
-document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
+// document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
 // document.querySelector("#img_nav").setAttribute("src", data.usertype);
 
 const url = `http://localhost:8080`;
@@ -42,9 +42,10 @@ function displayCards(data) {
     //Render in the form of card
     data.map(function (ele) {
         let container = document.createElement("div");
-        container.addEventListener("click", function () {
-            localStorage.setItem("saveData", JSON.stringify(data));
-        });
+        // on click on product cardi t basically store in ls with key savedata
+        // container.addEventListener("click", function () {
+        //     // localStorage.setItem("saveData", JSON.stringify(data));
+        // });
         //image 
         let img = document.createElement("img")
         img.setAttribute("src", ele.img);
@@ -94,7 +95,7 @@ function displayCards(data) {
 }
 
     //postrequest
-    let c = localStorage.getItem("count") || 0;
+    // let c = localStorage.getItem("count") || 0;
     async function productpost(){
        
         try{
@@ -116,7 +117,7 @@ function displayCards(data) {
             });
             let data = await res.json();
             console.log(data);
-            localStorage.setItem("count", c);
+            // localStorage.setItem("count", c);
             alert("Product Added successfully👍");
         }catch(err){
             console.log(err);
