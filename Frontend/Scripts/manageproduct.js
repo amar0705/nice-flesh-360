@@ -1,6 +1,6 @@
-let data = JSON.parse(localStorage.getItem("admin_data"));
+// let data = JSON.parse(localStorage.getItem("admin_data"));
 
-document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
+// document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
 // document.querySelector("#img_nav").setAttribute("src", data.usertype);
 
 const url = `http://localhost:8080`;
@@ -43,9 +43,9 @@ function displayCards(data) {
     //Render in the form of card
     data.map(function (ele) {
         let container = document.createElement("div");
-        container.addEventListener("click", function () {
-            localStorage.setItem("saveData", JSON.stringify(data));
-        });
+        // container.addEventListener("click", function () {
+        //     localStorage.setItem("saveData", JSON.stringify(data));
+        // });
         //image 
         let img = document.createElement("img")
         img.setAttribute("src", ele.img);
@@ -96,8 +96,9 @@ function displayCards(data) {
             let productId = ele._id;
             console.log(productId)
             deleted.push(ele);
+            // it show what data we have deleted recently
             localStorage.setItem("deleted",JSON.stringify(deleted));
-            
+            let deldata = localStorage.getItem("deletecount") || 0;
             try {
                 let api_data = await fetch(
                     `${url}/product/${productId}`,
@@ -113,8 +114,8 @@ function displayCards(data) {
                     let data = await api_data.json();
                     window.location.href = "manageProduct.html";
                     displayCards(globalData);
-                    c++;
-                    localStorage.setItem("deletecount", c);
+                    deldata++;
+                    localStorage.setItem("deletecount", deldata);
                 } else {
                     console.log("not editing data");
                 }
@@ -137,10 +138,10 @@ let c = localStorage.getItem("editcount") || 0;
 //update the data
 async function editProduct() {
  
-     let     productId=document.getElementById("addId").value;
-     let     title=document.querySelector("#prd_title").value;
-     let     img=document.querySelector("#prd_img").value;
-     let     price=document.querySelector("#acutal_price").value;
+     let   productId=document.getElementById("addId").value;
+     let   title=document.querySelector("#prd_title").value;
+     let   img=document.querySelector("#prd_img").value;
+     let   price=document.querySelector("#acutal_price").value;
      let   mrp_price=document.querySelector("#mrp_price").value;
      let   discount=document.querySelector("#dis_perc").value;
      let   rating=document.querySelector("#rating").value;
@@ -170,10 +171,11 @@ async function editProduct() {
 
         if (api_data.ok) {
             let res = await api_data.json();
-            console.log(res);
+            
             c++;
             localStorage.setItem("editcount", c);
             alert("Product Edited");
+            console.log(res);
             window.location.href = "manageProduct.html"
         } else {
             console.log("not editing data");
