@@ -17,7 +17,8 @@
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
-### 2. Product(items): Rendering
+### 2. Dashboard: Records , admin details
+### 2. Add Product Page: Rendering
 ### 3. Product(items): CRUD operation
 ### 4. Product: have direct access with DB 
 
