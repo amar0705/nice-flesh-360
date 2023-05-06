@@ -25,7 +25,7 @@ span {
   position: fixed;
   height: 100%;
   width: 240px;
-  background: #633fc0;
+  background: white;
   transition: all 0.5s ease;
   background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 }
@@ -103,7 +103,7 @@ span {
 
 .home-section {
   position: relative;
-  background: #2f248b;
+  background: white;
   min-height: 100vh;
   width: calc(100% - 240px);
   left: 240px;
