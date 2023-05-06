@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="#" />
-    <link
-    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-    rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <title>Manage Product</title>
     <link rel="stylesheet" href="./Styles/admin.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +14,7 @@
     <div class="sidebar">
       <div class="logo-details" onclick="location.href=`./index.html`">
         <!-- logo -->
-        <img style="width: 100%" src="#" alt="" />
+        <img src="./assets/SALONLEX-removebg-preview.png" style="width: 100%" src="#" alt="" />
       </div>
       <ul class="nav-links">
         <li>
@@ -32,18 +29,18 @@
             <span class="links_name">Add Product</span>
           </a>
         </li>
-        <li style="background-color: #081d45">
+        <li style="background-color: white">
           <a href="manageProduct.html">
-            <i class='bx bx-message-square-minus'></i>
+            <i class="bx bx-message-square-minus"></i>
             <span class="links_name">Manage Product</span>
-        </a>
+          </a>
         </li>
         <li>
           <a href="#">
-              <i class='bx bx-edit-alt'></i>
-              <span class="links_name">Manage Appointment</span>
+            <i class="bx bx-edit-alt"></i>
+            <span class="links_name">Manage Appointment</span>
           </a>
-      </li>
+        </li>
         <li class="log_out">
           <a href="index.html">
             <i class="bx bx-log-out"></i>
@@ -59,9 +56,9 @@
           <span class="dashboard">Edit Product</span>
         </div>
         <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
+          <input type="text" placeholder="Search..." />
+          <i class="bx bx-search"></i>
+        </div>
         <div class="profile-details">
           <div id="img-admin"></div>
           <!-- admin name -->
@@ -73,7 +70,7 @@
       <div class="home-content">
         <div class="sales-boxes">
           <div class="recent-sales box">
-            <div class="title"> Latest Product Display</div>
+            <div class="title">Latest Product Display</div>
             <div class="sales-details">
               <!-- Fetch Edit Item-->
             </div>
@@ -83,60 +80,30 @@
             <div id="form">
               <form>
                 <input type="text" id="addId" placeholder="Product Id" required />
-                <input
-                type="text"
-                placeholder="Enter Product title"
-                id="prd_title"
-              />
+                <input type="text" placeholder="Enter Product title" id="prd_title" />
 
-              <input
-                type="text"
-                id="prd_img"
-                placeholder="Enter Product img Url"
-              />
+                <input type="text" id="prd_img" placeholder="Enter Product img Url" />
 
-              <input
-                type="text"
-                id="acutal_price"
-                placeholder="Enter Product Price"
-              />
+                <input type="text" id="acutal_price" placeholder="Enter Product Price" />
 
-              <input
-                type="text"
-                id="mrp_price"
-                placeholder="Enter Product MRP Price"
-              />
+                <input type="text" id="mrp_price" placeholder="Enter Product MRP Price" />
 
-              <input
-                type="text"
-                id="dis_perc"
-                placeholder="Enter Product offer %"
-              />
+                <input type="text" id="dis_perc" placeholder="Enter Product offer %" />
 
-              <input
-                type="text"
-                placeholder="Enter Product Rating"
-                id="rating"
-              />
+                <input type="text" placeholder="Enter Product Rating" id="rating" />
 
-              <input
-                type="text"
-                id="category"
-                placeholder="Enter Product category"
-              />
-              <input type="text" id="type" placeholder="Enter Product type" />
-
+                <input type="text" id="category" placeholder="Enter Product category" />
+                <input type="text" id="type" placeholder="Enter Product type" />
 
                 <p style="color: black; margin-top: 35px">
-                  Note: Product details will get updated in the site, make sure
-                  before updating details.
+                  Note: Product details will get updated in the site, make sure before updating
+                  details.
                 </p>
                 <input
-                  style="font-size: 18px; width: 94%"
+                  style="font-size: 18px; width: 94%; color: black"
                   type="button"
                   id="addBtn"
                   value="Update Product details"
-                  
                 />
               </form>
             </div>
