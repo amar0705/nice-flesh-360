@@ -20,7 +20,8 @@
 ### 2. Dashboard: Records , admin details
 ### 3. Add Product Page: Rendering product list also Add new product
 ### 4. Manage Product Page: CRUD operation
-### 4. connection with DB: have direct access with DB in real time 
+### 5. Manage Appointment Page 
+### 6. connection with DB: have direct access with DB in real time 
 
 
 ## Backend:
