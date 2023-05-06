@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup Tab</title>
-    <link
-      rel="stylesheet"
-      href="https://files.slack.com/files-pri/T050D73RQLF-F055GLP871U/salonlex.png"
-    />
+    
     <link rel="stylesheet" href="./Styles/test.css" />
   </head>
   <body>
@@ -20,7 +17,12 @@
     <div class="container" style="border: solid red px">
       <h2 class="login-title">Register</h2>
 
-      <form class="login-form">
+      < class="login-form">
+        <div>
+            <label for="email">Name </label>
+            <input id="name" type="name" placeholder="your name" name="Name" required />
+          </div>
+        
         <div>
           <label for="email">Email </label>
           <input id="email" type="email" placeholder="me@example.com" name="email" required />
@@ -44,14 +46,20 @@
         </div>
 
         <div>
+            <label for="password">role </label>
+            <input id="role" type="text" placeholder="role" name="role" required />
+          </div>
+  
+
+        <div>
           <label for="password">Password </label>
           <input id="pass" type="password" placeholder="password" name="password" required />
         </div>
 
-        <button onclick="sinFun()" class="btn btn--form" type="submit" value="Log in">
+        <button id="login" class="btn btn--form"  value="Log in">
           Log in
         </button>
-      </form>
+    </div>
 
       <p id="account">
         Don't have an account. <a id="signup-text" href="./login.html">Please Signup here!</a>
@@ -60,23 +68,7 @@
   </body>
 </html>
 
-<script>
-  const sinFun = () => {
-    const payload = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      pass: document.getElementById("pass").value,
-      age: document.getElementById("age").value,
-      gen: document.getElementById("gen").value,
-    };
-    fetch("http://localhost:8080//user/register", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-</script>
+
+<script src="./Scripts/signup.js"></script>
+
+

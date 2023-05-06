@@ -83,17 +83,17 @@ body {
 .login-form {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 16px;
+  row-gap: 10px;
 }
 
 .login-form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .login-form input {
   width: 100%;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 9px;
   border: none;
 }
@@ -107,7 +107,7 @@ body {
   background-color: #22b49c;
   color: #dadd1f;
   align-self: end;
-  padding: 8px;
+  padding: 4px;
 }
 
 .btn,
@@ -127,12 +127,12 @@ body {
 }
 
 button {
-  outline: 1px solid #f48982;
+  outline: 1px solid black;
 }
 
 .btn--form:hover {
   background-color: #fdf2e9;
-  color: #f48982;
+  color:rgb(39, 58, 56);
 }
 form {
   margin: 2em;
@@ -200,12 +200,12 @@ form {
   .login-form {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 16px;
+    row-gap: 5px;
   }
 
   .login-form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
 
   .login-form input {

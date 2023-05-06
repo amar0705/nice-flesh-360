@@ -1,19 +1,30 @@
-const jwt=require('jsonwebtoken');
-const authenticate=(req,res,next)=>{
-    const token=req.headers.authorization
-    if(token){
-        jwt.verify(token,"hell",(err,decoded)=>{
-            if(decoded){
-                req.body.author=decoded.userid;
-                next();
-            }else{
-                res.send({msg:"wrong token"})
-            }
-        })
+const jwt=require("jsonwebtoken")
+const fs=require("fs")
+require("dotenv").config()
+
+const authenticate=async(req,res,next)=>{
+    var token=req.headers.authorization?.split(" ")[1]
+    if(!token){
+        res.status(401).send("bad requst")
+    }
+    const blacklistdata=JSON.parse(fs.readFileSync("./blacklistdata.json","utf-8"))
+    if(blacklistdata.includes(token)) {
+        res.status(200).send("login again")
     }else{
-        res.send({msg:"Please login first"})
+        try {
+            let decoded=jwt.verify(token,process.env.mainseckey)
+            if(decoded){
+                let userrole=decoded.userrole
+                req.body.userrole=userrole
+
+                next()
+            }else{
+                res.status(200).send("login again")
+            }
+        } catch (error) {
+            res.status(200).send("login again")
+        }
     }
 }
-module.exports={
-    authenticate
-}
+
+module.exports={authenticate}
