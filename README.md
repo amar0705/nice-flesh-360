@@ -19,8 +19,8 @@
 ### 1. Stylist data (Booking): Cancel/ Approval
 ### 2. Dashboard: Records , admin details
 ### 3. Add Product Page: Rendering product list also Add new product
-### 3. Product(items): CRUD operation
-### 4. Product: have direct access with DB 
+### 4. Manage Product Page: CRUD operation
+### 4. connection with DB: have direct access with DB in real time 
 
 
 ## Backend:
