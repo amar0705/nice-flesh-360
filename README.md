@@ -13,6 +13,7 @@
 
 #### Optional: 
 ### 1. OTP
+### 2. Mail
 
 ## Admin:
 ### 1. Stylist data (Booking): Cancel/ Approval
