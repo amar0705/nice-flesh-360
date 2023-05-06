@@ -1,9 +1,9 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const fs = require("fs");
 require("dotenv").config();
 const  {userModel} = require("../models/user.model");
+const { client } = require("../config/redisClient");
 
 
 
@@ -12,8 +12,8 @@ const userRouter = express.Router();
 
 userRouter.post("/signup",async(req,res)=>{
    
+    const {name,email,password,age,gender}=req.body
     try {
-        const {name,email,password,age,gender}=req.body
 
         const user=await userModel.findOne({email:email})
         if(user){
@@ -42,49 +42,60 @@ userRouter.post("/signup",async(req,res)=>{
 //////////log in ///////////
 
 userRouter.post('/login', async(req, res) => {
-    try {
-        const { email, password} = req.body;
+    const email=req.body.email
+    const password=req.body.password
+    try{
+        const data=await userModel.find({email})
+        if(data.length>0){
+            console.log(password);
+            bcrypt.compare(password,data[0].password,async(err, result)=> {
+                    if(err){
+                        res.status(400).send({message:err});
+                    }
 
-        //find the user by username
-        const user = await userModel.findOne({email});
-        if(!user){
-            return res.status(401).json({message : 'Invalid user name'})
-        } 
-        
-        //comparing the password enterd by user
-        const isPasswordMatch = await bcrypt.compare(password, user.password);
-        if(!isPasswordMatch){
-            return res.status(401).json({message: "Invalid password"})
+               if(result){
+                console.log(result);
+                    var token= jwt.sign({email:email}, process.env.mainseckey, {
+                        expiresIn: '1h',
+                     });
+                     var refreshToken= jwt.sign({email:email}, process.env.mainseckey, {
+                        expiresIn: '10h',
+                     });
+
+                     await client.set("refreshToken",refreshToken,{
+                        EX:1800
+                     })
+                     
+                     res.status(200).send({ msg: "Login Successful",token,refreshToken})
+                    
+                }
+                else{
+                    res.send({msg:"wrong credentials"})  
+                }
+
+             });
         }
-        // if username and password match from DB we'll create JWT token
-        const token = jwt.sign({userId: user._id}, process.env.mainseckey, {
-            expiresIn: 60
-        })
-
-        //Create Refresh JWT token
-        const refreshToken = jwt.sign({userId: user._id}, process.env.refseckey, {
-            expiresIn : 300
-        })
-
-        res.json({message: "Login Successful", token, refreshToken})
-    } catch (error) {
-        console.log(error)
+        else{
+            res.send({msg:"wrong credentials"})  
+        }
+    }catch(err){
+        console.log(err)
     }
-})
-
+    })
 //////////log out ///////////
 
 userRouter.get("/logout",async(req,res)=>{
-    const token=req.headers.authorization?.split(" ")[1]
-    const blacklistdata=JSON.parse(fs.readFileSync("./blacklistdata.json","utf-8"))
-    blacklistdata.push(token)
-    fs.writeFileSync("./blacklistdata.json",JSON.stringify(blacklistdata))
-    res.status(200).send("user loged out succesfully")
+    const token=req.headers.authorization
+    let refresh=await client.get("refresh")
+    await client.sAdd("blacklist",`${token}`)
+    await client.sAdd("blacklist",`${refresh}`)
+    
+       res.send({msg:"Logout Success"})
 })
 //////////Get new token////////
 
 userRouter.get("/getnewtoken",async(req,res)=>{
-    var reftoken=req.header.authorization?.split(" ")[1]
+    var reftoken=req.headers.authorization
     if(!reftoken){
         res.status(200).send("login again")
 
