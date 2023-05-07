@@ -27,9 +27,6 @@ async function fetchdata() {
   }
 }
 
-
-
-
 function getdata(data) {
   container.innerHTML = ""
   container.innerHTML = `
@@ -140,9 +137,10 @@ async function Approve(id) {
   } catch (error) {
     console.log(error.message);
     alert("Unable to Approve the appointment!");
+  } 
   }
-
-}
+     
+ 
 userDetails();
 function userDetails() {
     let admin = JSON.parse(localStorage.getItem("adminData"));
