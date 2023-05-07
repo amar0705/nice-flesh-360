@@ -22,6 +22,18 @@
 
       <form class="signup-form">
         <div>
+          <label for="name">Name </label>
+          <input
+            class="signup-name"
+            id="name"
+            type="name"
+            placeholder="Enter your name"
+            name="name"
+            require:true
+          />
+        </div>
+
+        <div>
           <label for="email">Email </label>
           <input
             id="signup-email"
@@ -46,7 +58,7 @@
 
         <div>
           <label for="password">Age </label>
-          <input id="age" type="number" placeholder="Enter Age" name="Age" required />
+          <input id="age" type="number" placeholder="Enter Age" name="Age"  require:true />
         </div>
 
         <div>
@@ -61,10 +73,11 @@
         </div>
 
         <div>
-        <button id="login" class="btn btn--form"  value="Log in">
-          Log in
-        </button>
-    </div>
+         <button id="login" class="btn btn--form"  value="Log in">
+          Sign Up
+         </button>
+        </div>
+      </form>
     <div>
       <p id="account">
         <a id="signup-text" href="./login.html">Already have an account. Login here!</a>
