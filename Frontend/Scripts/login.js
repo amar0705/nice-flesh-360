@@ -55,8 +55,10 @@ admin.addEventListener("click",(e)=>{
 .then((res) => res.json())
 .then(res=>{
   if(res.msg=="Login Successful"){
-    localStorage.setItem("token",res.token)
-    alert ("Login success")
+    localStorage.setItem("admin",res.token)
+    localStorage.setItem("adminData",JSON.stringify(res.data))
+    console.log(res.data)
+    // alert ("Login success")
     window.location.href = "admin.html"
   }
   else {

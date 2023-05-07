@@ -118,74 +118,29 @@ function displayCards(data) {
             let data = await res.json();
             console.log(data);
             // localStorage.setItem("count", c);
-            alert("Product Added successfully👍");
+
+            //swal will return a promise
+            Swal.fire(
+                'Good job!',
+                '<h3> Product Added successfully👍</h3>',
+                'success'
+              )
+            
         }catch(err){
             console.log(err);
         }
       }
 
-      //old code
+userDetails();
+function userDetails() {
+    let admin = JSON.parse(localStorage.getItem("adminData"));
+    let cont = document.getElementById("admin_name");
+    let cont2 = document.getElementById("img-admin");
 
-// let addButton = document.getElementById("addBtn");
-// addButton.addEventListener("click", (event) => {
-//     let obj = {
-//         image: productCategory.value,
-//         name: productTitle.value,
-//         priceKey: productPrice.value,
-//         price: `$${productPrice.value}`,
-//         color: "blue",
-//         priceKey1: productPrice.value,
-//         price: `$${productPrice.value}`,
-//         color: "blue"
-//     };
+    cont2.innerHTML = `<img src="${admin[0].image}">`
+    cont.innerHTML = `${admin[0].name}`
+};
 
-//     addData(obj);
-// });
-// let c = localStorage.getItem("count") || 0;
-// async function addData(obj) {
-//     try {
-//         let data = await fetch(
-//             `${url}products`,
-//             {
-//                 method: "POST",
-//                 headers: {
-//                     "content-type": "application/json",
-//                 },
-//                 body: JSON.stringify(obj),
-//             }
-//         );
-//         if (data.ok) {
-//             let addProductData = await data.json();
-//             c++;
-//             localStorage.setItem("count", c);
-//             alert("Product Added successfully👍");
-//             window.location.href = "manageProduct.html"
-//             // displayCards(productData);
-//         } else {
-//             alert("Data cant be added");
-//         }
-//     } catch (error) {
-//         alert(error);
-//     }
-// }
-
-
-
-//userprofile
-//userDetailss();
-// function userDetailss() {
-//     let admin = JSON.parse(localStorage.getItem("admin"));
-//     let cont = document.getElementById("admin_name");
-//     let cont2 = document.getElementById("img-admin");
-
-//     cont2.innerHTML = `<img src="${admin.image}">`
-//     cont.innerHTML = `${admin.name}`
-// };
-
-
-
-//logout button
 document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
-    localStorage.clear("admin-signed");
-    localStorage.clear("admin");
+     localStorage.clear("admin");
 });

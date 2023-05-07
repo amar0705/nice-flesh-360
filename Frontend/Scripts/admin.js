@@ -18,7 +18,7 @@ async function Fetch_admin() {
     console.log(adminData);
     admin_details.innerHTML = adminData.map(el => {
         return `<div class="card">
-        <div class="img"><img src="${el.image}" ></div>
+        <div class="img"><img src="${el.image}" style="width:100%"></div>
         <div class="card-body">
             <p class="card-title"><span class="name">Name:- </span><a href=""></a><span class="ans-name">${el.name}</span></p>
             <p class="card-text"><span class="name">LinkedIn:- </span><a href="${el.linkedin}" class="ans">${el.linkedin}</a></p>
@@ -31,11 +31,6 @@ async function Fetch_admin() {
 }
 //render admin details 
 Fetch_admin();
-
-// let Admin_data = JSON.parse(localStorage.getItem("admin_data"));
-// displayCards(Admin_data);
-
-// document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
 
 countData();
 
@@ -53,27 +48,28 @@ async function countData() {
         // .headers.get( "X-Total-Count" )
         let data = await api_data.json();
         document.getElementById("totalApicount").innerText = data.product.length;
-        // document.getElementById("NewlyAdd").innerText = localStorage.getItem("count") || 0;
+
+        // fetch appointment data length
+        // document.getElementById("NewlyAdd").innerText = localStorage.getItem("count") || 0; 
         document.getElementById("TotalEdited").innerText = localStorage.getItem("editcount") || 0;
         document.getElementById("TotalDelete").innerText = localStorage.getItem("deletecount") || 0;
 
 
     } catch (error) {
-        // alert("Can't able to fetch Details of Admin");
+        alert("Can't able to fetch Details of Admin");
     }
 }
 
-// userDetails();
+userDetails();
 function userDetails() {
-    let admin = JSON.parse(localStorage.getItem("admin"));
+    let admin = JSON.parse(localStorage.getItem("adminData"));
     let cont = document.getElementById("admin_name");
     let cont2 = document.getElementById("img-admin");
 
-    cont2.innerHTML = `<img src="${admin.image}">`
-    cont.innerHTML = `${admin.name}`
+    cont2.innerHTML = `<img src="${admin[0].image}">`
+    cont.innerHTML = `${admin[0].name}`
 };
 
 document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
-    localStorage.clear("admin-signed");
-    localStorage.clear("admin");
+     localStorage.clear("admin");
 });

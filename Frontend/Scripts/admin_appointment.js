@@ -27,9 +27,6 @@ async function fetchdata() {
   }
 }
 
-
-
-
 function getdata(data) {
   container.innerHTML = ""
   container.innerHTML = `
@@ -140,6 +137,20 @@ async function Approve(id) {
   } catch (error) {
     console.log(error.message);
     alert("Unable to Approve the appointment!");
+  } 
   }
+     
+ userDetails();
+function userDetails() {
+    let admin = JSON.parse(localStorage.getItem("adminData"));
+    let cont = document.getElementById("admin_name");
+    let cont2 = document.getElementById("img-admin");
 
+    cont2.innerHTML = `<img src="${admin[0].image}">`
+    cont.innerHTML = `${admin[0].name}`
+};
+
+document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
+     localStorage.clear("admin");
+});
 }

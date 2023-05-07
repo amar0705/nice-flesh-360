@@ -43,7 +43,7 @@ admin.post('/login', async(req, res) => {
                       EX:1800
                    })
                    
-                   res.status(200).send({ msg: "Login Successful",token,refreshToken})
+                   res.status(200).send({ msg: "Login Successful",token,refreshToken,data})
                   
               }
               // else{
