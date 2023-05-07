@@ -52,7 +52,9 @@ nav {
 .logo {
   height: 175px;
 }
-
+.logo:hover {
+cursor: pointer;
+}
 #navbar {
   background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 }
@@ -211,13 +213,13 @@ nav {
   border-radius: 20px;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-}
+} */
 a,
 a:hover,
 a:focus,
