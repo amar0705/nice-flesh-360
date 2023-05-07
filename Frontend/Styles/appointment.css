@@ -13,10 +13,11 @@
 	grid-template-columns: repeat(3,1fr);
 }
 
-.text_conteiner h3,h4{
+.text_container h3,h4{
     text-align: center;
+	margin-bottom: -10px;
 }
-.profile_conteiner{
+.profile_container{
 	height:320px;
 	width:320px;
 	box-shadow: 0px 6px 10px -6px;
@@ -26,46 +27,49 @@
 	margin-bottom:60px;
 	overflow:hidden;
 }
-.image_conteiner{
+.image_container{
 	height:40px;
 	background:linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);;
 }
 
-.text_conteiner{
-	height:200px;
+.text_container{
+	height:130px;
 	background:white;
-	padding:20px;
-	
 }
-.text_conteiner p{
+.text_container p{
 	text-align:center;
-    line-height: 40px;
+    line-height: 15px;
 }
-.title h4{
+.title p,h4{
 	color:lightcoral;
 }
-.btn{
+
+.bton{
+	display: block;
 	background:linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 	border-radius:20px;
+	
 	height:40px;
 	width:140px;
 	margin:auto;
+	margin-bottom: 40px;
+	margin-top: -10px;
 }
-.btn:hover{
+.bton:hover{
 	background:none;
 	color:linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 	border:2px solid linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 	border-style:double;
 	transition:1s;
 }
-.btn p{
+.bton p{
 	text-decoration:none;
 	color:blue;
 	line-height:40px;
 	color:black;
 	display:block;
 }
-.btn p:hover{
+.bton p:hover{
 	color:linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
 	transition:1s;
     cursor: pointer;
@@ -77,3 +81,25 @@
 	margin:5px;
 	display:inline-block;
 }
+
+@media screen and (max-width: 800px) {
+	#cont{
+		width: 90%;
+		margin: auto;
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	#cont{
+		width: 90%;
+		margin: auto;
+		display: grid;
+		grid-template-columns: repeat(1,1fr);
+	}
+
+}
+
+

@@ -12,6 +12,7 @@ fetchdata()
    let res  = await fetch(`${baseurl}/stylist/male`)
    data = await res.json()
    arr=data
+   console.log(arr)
         getdata(arr)
     }
     catch(err){

@@ -386,3 +386,12 @@ form {
 #login-image {
   margin-top: 125px;
 }
+
+.login-admin{
+  text-align: center;
+}
+
+.login-admin:hover{
+  color: white;
+  cursor: pointer;
+}
