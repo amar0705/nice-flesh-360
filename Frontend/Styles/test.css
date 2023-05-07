@@ -94,6 +94,13 @@ body {
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
 }
+
+.logocon-signup > img {
+  height: 400px;
+  width: 400px;
+  margin-top: 50px;
+}
+
 .container {
   margin-top: 3%;
   /* margin-bottom: 5%; */
@@ -117,6 +124,8 @@ body {
   background-color: rgb(147, 192, 192);
   height: 600px;
   margin-top: 75px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 
   /* border-radius: 11px; */
   /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); */
@@ -137,6 +146,11 @@ body > div {
   color: black;
 }
 
+#login {
+  width: 100%;
+  margin-top: 35px;
+}
+
 #login-text {
   text-decoration: none;
   color: black;
@@ -147,6 +161,9 @@ body > div {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
+  width: 200%;
+  margin-top: 20px;
+  text-align: left;
 }
 
 .login-title {
@@ -161,9 +178,7 @@ body > div {
 .login-form {
   display: grid;
   grid-template-columns: 1fr;
-
   row-gap: 10px;
-
   row-gap: 7px;
 }
 
@@ -176,7 +191,6 @@ body > div {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 7px;
-
 }
 
 .login-form label {
@@ -185,7 +199,6 @@ body > div {
   margin-bottom: 8px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
-
 }
 
 .login-form input {
@@ -214,7 +227,6 @@ body > div {
 
 #signup-btn {
   margin-top: 35px;
-
 }
 
 .btn,
@@ -234,15 +246,13 @@ body > div {
 }
 
 button {
-
   outline: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
 }
 
 .btn--form:hover {
   background-color: #fdf2e9;
-  color:rgb(39, 58, 56);
+  color: rgb(39, 58, 56);
 }
 form {
   margin: 2em;
