@@ -40,21 +40,21 @@ function getdata(data){
     
     function getasCard(item){
         return `
-        <div class="profile_conteiner">
-		<div class="image_conteiner">
+        <div class="profile_container">
+		<div class="image_container">
 		</div>
-		<div class="text_conteiner">
+		<div class="text_container">
 			<div class="title">
 				<h3>Style - ${item.style_name}</h3><br>
 				<h4>Status - ${item.status}</h4><br>
-				<h4>Styler - ${item.styler_name}</h4><br>
+				<p class="styler">Styler - ${item.styler_name}</p><br>
 			</div>
 			<div class="objective">
 			<p>Appointment Date - ${item.date}</p>
 			<p>Timmings - ${item.time}</p>
 			</div><br>
       ${item.status==="Pending"?
-			`<div class="btn">
+			`<div class="bton">
 				 <center><p data-id=${item._id} class="cancel">Cancel</p></center>
 			</div><br>`:`` }
 			
