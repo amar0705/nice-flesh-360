@@ -1,8 +1,3 @@
-// let data = JSON.parse(localStorage.getItem("admin_data"));
-
-// document.querySelector("#admin_name").innerText = localStorage.getItem("admin_name")
-// document.querySelector("#img_nav").setAttribute("src", data.usertype);
-
 const url = `http://localhost:8080`;
 let deleted = JSON.parse(localStorage.getItem("deleted")) || [];
 
@@ -43,9 +38,7 @@ function displayCards(data) {
     //Render in the form of card
     data.map(function (ele) {
         let container = document.createElement("div");
-        // container.addEventListener("click", function () {
-        //     localStorage.setItem("saveData", JSON.stringify(data));
-        // });
+        
         //image 
         let img = document.createElement("img")
         img.setAttribute("src", ele.img);
@@ -116,7 +109,12 @@ function displayCards(data) {
                     displayCards(globalData);
                     deldata++;
                     localStorage.setItem("deletecount", deldata);
-                    alert("Product Deleted successfully👍");
+                    // alert("Product Deleted successfully👍");
+                    Swal.fire(
+                        'Good job!',
+                        '<h3> Product Deleted successfully👍</h3>',
+                        'success'
+                      )
                 } else {
                     console.log("not editing data");
                 }
@@ -133,72 +131,79 @@ function displayCards(data) {
 
 let updatedButton = document.getElementById("addBtn");
 
-updatedButton.addEventListener("click", editProduct);
-let c = localStorage.getItem("editcount") || 0;
+updatedButton.addEventListener("click", async(e)=>{
+    e.preventDefault();
+    let c = localStorage.getItem("editcount") || 0;
 
-//update the data
-async function editProduct() {
- 
-     let   productId=document.getElementById("addId").value;
-     let   title=document.querySelector("#prd_title").value;
-     let   img=document.querySelector("#prd_img").value;
-     let   price=document.querySelector("#acutal_price").value;
-     let   mrp_price=document.querySelector("#mrp_price").value;
-     let   discount=document.querySelector("#dis_perc").value;
-     let   rating=document.querySelector("#rating").value;
-     let   category=document.querySelector("#category").value;
-      
- 
-    try {
-    //    data = JSON.stringify(data)
-    //    let id =document.getElementById('addId').value
-
-        let api_data = await fetch(
-            `${url}/product/${productId}`,
-            {
-                method: "PATCH",
-                // body:data,
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    title,
-                    img,price,mrp_price,discount,rating,category
-                
-                }),
-            }
-        );
-        // console.log(api_data);
-
-        if (api_data.ok) {
-            let res = await api_data.json();
-            
-            c++;
-            localStorage.setItem("editcount", c);
-            alert("Product Updated successfully👍");
-            console.log(res);
-            window.location.href = "manageProduct.html"
-        } else {
-            console.log("not editing data");
-        }
-    } catch (error) {
-        alert(error);
-    }
-
-}
-editProduct();
-
-// userDetailss();
-// function userDetailss() {
-//     let admin = JSON.parse(localStorage.getItem("admin"));
-//     let cont = document.getElementById("admin_name");
-//     let cont2 = document.getElementById("img-admin");
+    //update the data
+    // async function editProduct() {
+        
+     
+         let   productId=document.getElementById("addId").value;
+         let   title=document.querySelector("#prd_title").value;
+         let   img=document.querySelector("#prd_img").value;
+         let   price=document.querySelector("#acutal_price").value;
+         let   mrp_price=document.querySelector("#mrp_price").value;
+         let   discount=document.querySelector("#dis_perc").value;
+         let   rating=document.querySelector("#rating").value;
+         let   category=document.querySelector("#category").value;
+          
+     
+        try {
+        //    data = JSON.stringify(data)
+        //    let id =document.getElementById('addId').value
     
-//     cont2.innerHTML = `<img src="${admin.image}">`
-//     cont.innerHTML = `${admin.name}`
-// };
+            let api_data = await fetch(
+                `${url}/product/${productId}`,
+                {
+                    method: "PATCH",
+                    // body:data,
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        title,
+                        img,price,mrp_price,discount,rating,category
+                    
+                    }),
+                }
+            );
+            // console.log(api_data);
+    
+            if (api_data.ok) {
+                let res = await api_data.json();
+                
+                c++;
+                localStorage.setItem("editcount", c);
+                // alert("Product Updated successfully👍");
+                Swal.fire(
+                    'Good job!',
+                    '<h3> Product Updated successfully👍</h3>',
+                    'success'
+                  ).then((res)=>{
 
-// document.getElementsByClassName("log_out")[0].addEventListener("click",()=>{
-//     localStorage.clear("admin-signed");
-//     localStorage.clear("admin");
-// });
+                      window.location.href = "manageProduct.html"
+                  })
+                
+                console.log(res);
+            } else {
+                console.log("not editing data");
+            }
+        } catch (error) {
+            alert(error);
+        }
+});
+
+userDetails();
+function userDetails() {
+    let admin = JSON.parse(localStorage.getItem("adminData"));
+    let cont = document.getElementById("admin_name");
+    let cont2 = document.getElementById("img-admin");
+
+    cont2.innerHTML = `<img src="${admin[0].image}">`
+    cont.innerHTML = `${admin[0].name}`
+};
+
+document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
+     localStorage.clear("admin");
+});

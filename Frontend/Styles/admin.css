@@ -120,7 +120,8 @@ span {
   display: flex;
   justify-content: space-between;
   height: 80px;
-  background: #fff;
+  /* background: #fff; */
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
   display: flex;
   align-items: center;
   position: fixed;
