@@ -140,7 +140,8 @@ async function Approve(id) {
   } 
   }
      
- userDetails();
+ 
+userDetails();
 function userDetails() {
     let admin = JSON.parse(localStorage.getItem("adminData"));
     let cont = document.getElementById("admin_name");
@@ -153,4 +154,3 @@ function userDetails() {
 document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
      localStorage.clear("admin");
 });
-}
