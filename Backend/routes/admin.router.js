@@ -53,7 +53,6 @@ admin.post('/login', async(req, res) => {
           //  });
       
       else{
-        console.log(data)
           res.send({msg:"wrong credentials"})  
       }
   }catch(err){
