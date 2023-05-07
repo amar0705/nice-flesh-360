@@ -19,11 +19,11 @@ async function Fetch_admin() {
     admin_details.innerHTML = adminData.map(el => {
         return `<div class="card">
         <div class="img"><img src="${el.image}" ></div>
-        <div>
-            <p><span class="name">Name:- </span><a href=""></a><span class="ans-name">${el.name}</span></p>
-            <p><span class="name">LinkedIn:- </span><a href="${el.linkedin}" class="ans">${el.linkedin}</a></p>
-            <p><span class="name">Github:- </span><a href="${el.Github}" class="ans">${el.Github}</a></p>
-            <p><span class="name">E-Mail:- </span><a href="${el.email}" class="ans">${el.email}</a></p>
+        <div class="card-body">
+            <p class="card-title"><span class="name">Name:- </span><a href=""></a><span class="ans-name">${el.name}</span></p>
+            <p class="card-text"><span class="name">LinkedIn:- </span><a href="${el.linkedin}" class="ans">${el.linkedin}</a></p>
+            <p class="card-text"><span class="name">Github:- </span><a href="${el.Github}" class="ans">${el.Github}</a></p>
+            <p class="card-text"><span class="name">E-Mail:- </span><a href="${el.email}" class="ans">${el.email}</a></p>
         </div>
     </div>`
     }).join("");
