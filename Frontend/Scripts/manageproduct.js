@@ -116,6 +116,7 @@ function displayCards(data) {
                     displayCards(globalData);
                     deldata++;
                     localStorage.setItem("deletecount", deldata);
+                    alert("Product Deleted successfully👍");
                 } else {
                     console.log("not editing data");
                 }
@@ -174,7 +175,7 @@ async function editProduct() {
             
             c++;
             localStorage.setItem("editcount", c);
-            alert("Product Edited");
+            alert("Product Updated successfully👍");
             console.log(res);
             window.location.href = "manageProduct.html"
         } else {

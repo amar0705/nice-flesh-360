@@ -5,11 +5,11 @@ const btn= document.getElementById("login")
  btn.addEventListener("click",(e)=>{
     e.preventDefault()
     let name= document.getElementById("name").value
-      let age= document.getElementById("age").value
-      let gen= document.getElementById("signup-gen").value
-     let email= document.getElementById("signup-email").value
-     let password= document.getElementById("signup-pass").value
-      console.log(name)
+    let age= document.getElementById("age").value
+    let gen= document.getElementById("signup-gen").value
+    let email= document.getElementById("signup-email").value
+    let password= document.getElementById("signup-pass").value
+      // console.log(name,age)
     const payload = {
       name,age,gen,email,password
 
