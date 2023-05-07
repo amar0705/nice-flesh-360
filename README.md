@@ -37,6 +37,9 @@
 ### 1. MongoDB
 ### 2. Redis
 
+## external library:
+### 1. sweetalert
+
 ## Working Routes
     1. Unprotected Route:
         Homepage => Products
