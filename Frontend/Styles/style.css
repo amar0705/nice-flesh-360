@@ -97,3 +97,28 @@ body{
   font-weight: 500;
   cursor: pointer;
 }
+
+
+
+/* -------------------- Mid screen------------- */
+
+
+@media(min-width: 600px) and (max-width: 1200px) {
+  #container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    /* width: 80%; */
+    /* margin: auto; */
+  } 
+}
+/* -------------------- Small Screen---------------- */
+@media(min-width: 200px) and (max-width: 599px) {
+  #container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2rem;
+    /* width: 80%; */
+    /* margin: auto; */
+  } 
+}

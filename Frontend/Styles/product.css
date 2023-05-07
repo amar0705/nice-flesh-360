@@ -64,12 +64,16 @@ p {
   grid-gap: 20px;
   margin-top: 50px;
   /* border: 10px solid rgb(255, 0, 106);  */
+
 }
 #all_products > div {
   padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #all_products > div:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .proClass {
   width: 150px;
@@ -184,4 +188,58 @@ p {
   width: 180px;
   height: 90px;
   margin-left: 10px;
+}
+
+
+
+/* -------------------- Mid screen------------- */
+
+
+@media(min-width: 600px) and (max-width: 1200px) {
+  #all_products {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-left: 40px;
+  }
+  #brands_head {
+    margin-left:40px
+  }
+
+   #filterbar {
+    display: none;
+  }
+
+  .brands{
+    width:150%;
+    margin-left: 50px;
+  }
+
+  
+}
+/* -------------------- Small Screen---------------- */
+@media(min-width: 200px) and (max-width: 599px) {
+  #all_products {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin-left: 50px;
+
+  }
+  #filterbar {
+    display: none;
+  }
+
+  #brands_head {
+    margin-left:45px
+  }
+
+  .brands{
+    width:150%;
+    margin-left: 50px;
+  }
+
+  
 }
