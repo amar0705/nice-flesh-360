@@ -1,7 +1,7 @@
 let baseurl = "http://localhost:8080"
 const token = localStorage.getItem("token")
 const stylearr = localStorage.getItem("style")
-var stylistArea = document.getElementById("cont")
+var stylistArea = document.getElementById("all_products")
 let arr
 let stylist
 fetchdata()

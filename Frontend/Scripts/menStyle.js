@@ -45,7 +45,7 @@ let baseurl="http://localhost:8080"
 
 
     function booknow(){
-    let book = document.querySelectorAll('.btn')
+    let book = document.querySelectorAll('.card-btn')
     for(let btn of book){
     btn.addEventListener("click",(e)=>{
     alert(e.target.dataset.id)
