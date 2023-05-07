@@ -28,7 +28,13 @@ async function Fetch_admin() {
          console.log(data)
        displayCards(data.product);
     } catch (error) {
-        alert("Can't able to fetch Details of Admin");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Not able to fetched Details of Admin!',
+            footer: '<a href="#">Alert: Backend is not Responding</a>'
+          })
+        // alert("Can't able to fetch Details of Admin");
     }
 }
 Fetch_admin();
@@ -85,9 +91,18 @@ function displayCards(data) {
         del.innerText = "Delete";
         del.classList = "delete";
     
-        del.addEventListener("click",async ()=>{
+        del.addEventListener("click",async (e)=>{
+            e.preventDefault();
             let productId = ele._id;
             console.log(productId)
+            Swal.fire(
+                'Good job!',
+                '<h3> SalonLex - Product Deleted successfully👍</h3>',
+                'success'
+              ).then(()=>{
+                window.location.href = "manageProduct.html";
+              })
+              
             deleted.push(ele);
             // it show what data we have deleted recently
             localStorage.setItem("deleted",JSON.stringify(deleted));
@@ -105,21 +120,17 @@ function displayCards(data) {
         
                 if (api_data.ok) {
                     let data = await api_data.json();
-                    window.location.href = "manageProduct.html";
+                   
                     displayCards(globalData);
                     deldata++;
                     localStorage.setItem("deletecount", deldata);
                     // alert("Product Deleted successfully👍");
-                    Swal.fire(
-                        'Good job!',
-                        '<h3> Product Deleted successfully👍</h3>',
-                        'success'
-                      )
+                    
                 } else {
                     console.log("not editing data");
                 }
             } catch (error) {
-                alert(error);
+                Swal.fire('error')
             }
         });
 
@@ -178,7 +189,7 @@ updatedButton.addEventListener("click", async(e)=>{
                 // alert("Product Updated successfully👍");
                 Swal.fire(
                     'Good job!',
-                    '<h3> Product Updated successfully👍</h3>',
+                    '<h3> SalonLex - Product Updated successfully 👍</h3>',
                     'success'
                   ).then((res)=>{
 
@@ -190,7 +201,7 @@ updatedButton.addEventListener("click", async(e)=>{
                 console.log("not editing data");
             }
         } catch (error) {
-            alert(error);
+            Swal.fire('error')
         }
 });
 

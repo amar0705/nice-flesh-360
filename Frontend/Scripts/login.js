@@ -23,11 +23,25 @@ butt.addEventListener("click",(e)=>{
 .then(res=>{
     if(res.msg=="Login Successful"){
       localStorage.setItem("token",res.token)
-      alert ("Login success")
-      window.location.href = "index.html"
+      Swal.fire(
+        'Good job!',
+        '<h3> Login Successfully! Enjoy 👍</h3>',
+        'success'
+      ).then((res)=>{
+        window.location.href = "index.html"
+      })
+      // alert ("Login success")
+      // window.location.href = "index.html"
     }
     else {
-      alert ("Wrong Credentials")
+   Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Wrong Credentials!',
+        footer: '<a href="../Frontend/login.html">Log in</a>'
+      })
+
+      // alert ("Wrong Credentials")
     }
 }
 )
@@ -59,10 +73,23 @@ admin.addEventListener("click",(e)=>{
     localStorage.setItem("adminData",JSON.stringify(res.data))
     console.log(res.data)
     // alert ("Login success")
-    window.location.href = "admin.html"
+    Swal.fire(
+        'Good job!',
+        '<h3> SalonLex - Welcome to Admin Panel! 👍</h3>',
+        'success'
+      ).then((res)=>{
+        window.location.href = "admin.html"
+      })
+    // window.location.href = "admin.html"
   }
   else {
-    alert ("Wrong Credentials")
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'SalonLex - Wrong Credentials!',
+        footer: '<a href="../Frontend/login.html">Log in</a>'
+      })
+    // alert ("Wrong Credentials")
   }
 }
 )

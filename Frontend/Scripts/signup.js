@@ -24,11 +24,24 @@ const btn= document.getElementById("login")
       .then((res) => res.json())
     .then((res)=>{
     if(res.msg=="register successfully"){
-      alert ("Register success")
-      window.location.href = "login.html"
+      // alert ("Register success")
+  
+      Swal.fire(
+        'Good job!',
+        '<h3> SalonLex - Register Successfully! Proceed to Login 👍</h3>',
+        'success'
+      ).then((res)=>{
+        window.location.href = "login.html"
+      })
     }
     else {
-      alert ("Already registered")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'SalonLex - Already registered!',
+        footer: '<a href="../Frontend/login.html">Log in</a>'
+      })
+      // alert ("Already registered")
     }
    } )
       .catch((err) => console.log(err))

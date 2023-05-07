@@ -122,7 +122,7 @@ function displayCards(data) {
             //swal will return a promise
             Swal.fire(
                 'Good job!',
-                '<h3> Product Added successfully👍</h3>',
+                '<h3>SalonLex - New Product Added successfully👍</h3>',
                 'success'
               )
             

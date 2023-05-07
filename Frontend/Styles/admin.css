@@ -328,6 +328,15 @@ nav .profile-details i {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+#recent-sales {
+  width: 100%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .home-content .sales-boxes .sales-details {
   /* display: flex; */
   align-items: center;
