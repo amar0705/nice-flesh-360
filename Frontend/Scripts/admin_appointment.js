@@ -1,15 +1,15 @@
 let baseurl="http://localhost:8080"
-let container=document.getElementById("cont")
+let container=document.getElementById("all_products")
+const token = localStorage.getItem("token")
 const stylist_id=localStorage.getItem("stylist_id")
 let arr
-
 
 fetchdata()
 
 async function fetchdata(){
 let res= await fetch(`${baseurl}/appointment/stylist/${stylist_id}`,{
     headers:{
-        "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+        "authorization": token
     }
 })
 let data= await res.json()
@@ -102,7 +102,7 @@ function getdata(data){
         method:'PATCH',
         headers:{
           "content-type": "application/json",
-          "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+          "authorization":token
         },
         body: JSON.stringify({status:"Cancelled"})
       })
@@ -126,7 +126,7 @@ function getdata(data){
           method:'PATCH',
           headers:{
             "content-type": "application/json",
-            "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InIiLCJ1c2VyaWQiOiI2NDUzYWZkZmZlNjgyMzYxMzUxMDMwYzkiLCJpYXQiOjE2ODMyMDYxNjl9.RuejxlSxQOWGt_e4s6fJWeOGE4Yz2rpqR7jlTnIE7hA"
+            "authorization":token
           },
           body: JSON.stringify({status:"Confirmed"})
         })

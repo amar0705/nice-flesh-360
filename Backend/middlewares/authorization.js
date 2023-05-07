@@ -5,13 +5,13 @@ const authenticate=async(req,res,next)=>{
     let blacklist=await client.sIsMember("blacklist",`${token}`)
 
    if(blacklist){
-    res.send({msg:"Please login again"})
+    return res.send({msg:"Please login again"})
    }
    else{
     if(token){
         jwt.verify(token,process.env.mainseckey,(err,decoded)=>{
             if(err){
-                res.send(err);
+               return res.send(err);
             }
             if(decoded){
                 req.body.author=decoded.userid;

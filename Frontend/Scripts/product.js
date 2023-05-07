@@ -161,9 +161,10 @@ function displayProduct(data) {
     Buy.innerText = "Buy";
     Buy.classList = "Buy";
     Buy.addEventListener("click", () => {
-      BuyItems.push(ele)
-      localStorage.setItem("items",JSON.stringify(BuyItems));
-      window.location.href = "payment.html";
+      buy(ele)
+      // BuyItems.push(ele)
+      // localStorage.setItem("items",JSON.stringify(BuyItems));
+      // window.location.href = "payment.html";
     })
     container.append(img, name_div, category, rating_div, mrp_price, price, Buy);
 
@@ -295,3 +296,64 @@ function sort_rating_high(data) {
   displayProduct(data);
 }
 
+
+
+///------------>>>>>>   Buy Function <<<<<<<<<<------------------------
+
+
+async function buy(ele){
+
+  try{
+    let res = await fetch(`${baseUrl}/product/orders`,{
+      method:"POST",
+      headers: {
+        'content-type':'application/json'
+      },
+      body: JSON.stringify({amount:ele.price})
+    })
+    let data= await res.json()
+    var options = {
+      key: "rzp_test_hYENA0OIE0zqyC", 
+      amount: `${data.amount*100}`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: "INR",
+      name: "Salonlex",
+      description: "Test Transaction",
+      image: "../assets/SALONLEX-removebg-preview.png",
+      order_id: `${data.id}`, //This is a sample Order ID. Pass the `id` obtained in the response of above steps
+      handler: function (response) {
+        console.log("payment Id:- ", response.razorpay_payment_id);
+        console.log("Order Id:- ", response.razorpay_order_id);
+        console.log("Signature:- ", response.razorpay_signature);
+      },
+      prefill: {
+        name: "Salonlex",
+        email: "abc@ymail.com",
+        contact: "",
+      },
+      notes: {
+        address: "Masai School Bangalore",
+      },
+      theme: {
+        color: "#eaea66",
+      },
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on("payment.failed", function (response) {
+      // alert(response.error.code);
+      // alert(response.error.description);
+      // alert(response.error.source);
+      // alert(response.error.step);
+      alert(response.error.reason);
+      // alert(response.error.metadata.order_id);
+      // alert(response.error.metadata.payment_id);
+    });
+    if(data){
+      rzp1.open()
+    }
+  }
+  catch(e) {
+
+    console.log(e)
+  }
+
+}

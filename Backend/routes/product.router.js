@@ -1,4 +1,6 @@
 const express = require('express');
+const fetch = require('node-fetch');
+require("dotenv").config()
 const { ProductModel } = require('../models/Products.model');
 
 const product = express.Router();
@@ -125,5 +127,35 @@ product.delete("/:id", async (req, res) => {
     return res.status(404).send(err.message);
   }
 });
+
+
+//----------------->>>>> Payment Method<<<<--------------
+
+product.post("/orders",async(req,res)=>{
+let amount=req.body.amount;
+ let auth='Basic ' + Buffer.from(process.env.apiKey + ':' + process.env.apiSecret).toString('base64')
+try{
+  let resp= await fetch('https://api.razorpay.com/v1/orders',{
+    method:"POST",
+    headers: {
+      'content-type':"application/json",
+      'Authorization': auth	 
+    },
+    body:  JSON.stringify({
+      "amount": amount*100,
+      "currency": "INR",
+      "receipt": "qwsaq1",
+      "partial_payment": true,
+      "first_payment_min_amount": 200
+    })
+  })
+  let data= await resp.json()
+  res.status(200).send(data)
+}
+catch(err){
+  res.status(500).send({error: err})
+}
+    
+})
 
 module.exports = { product }
