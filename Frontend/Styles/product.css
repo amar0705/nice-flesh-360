@@ -206,6 +206,10 @@ p {
   text-align: center;
 }
 
+#buy-btn {
+  cursor: pointer;
+}
+
 #brand_div_option {
   font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
