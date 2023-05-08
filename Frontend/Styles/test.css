@@ -163,7 +163,7 @@ body > div {
 
 #login-text {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 #account {
@@ -390,6 +390,7 @@ form {
 
 .login-admin {
   text-align: center;
+  margin-top: 15px;
 }
 
 .login-admin:hover {

@@ -40,7 +40,7 @@ function getasCard(item) {
               <p class="card-text">${item.descriptions.substring(0, 60) + "..."}</p>
              <button data-id= ${
                item._id
-             } class="btn btn-primary" style="color:black; background:white ">Book Now</button>
+             } class="btn btn-primary" style="color:black; background:white; border-color: transparent">Book Now</button>
             </div>
           </div>
     `;
