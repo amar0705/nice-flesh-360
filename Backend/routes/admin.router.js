@@ -1,5 +1,6 @@
 const express = require('express');
 const { Adminmodel } = require('../models/admin.model');
+const {authenticate} = require("../middlewares/authorization")
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const { client } = require("../config/redisClient");

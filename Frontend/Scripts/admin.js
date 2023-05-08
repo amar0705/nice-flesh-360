@@ -1,4 +1,27 @@
 const url = `http://localhost:8080`;
+
+const token=localStorage.getItem("admin")
+window.addEventListener("load",()=>{
+    if(token){
+        display()
+    }
+    else{
+        // alert("Login first")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'SalonLex - Please Login first!',
+            footer: '<a href="../Frontend/login.html">Log in</a>'
+          }).then((res)=>{
+            window.location.href = "login.html"
+          })
+    }
+})
+
+function display(){
+
+
+// var token;
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
 sidebarBtn.onclick = function () {
@@ -13,7 +36,9 @@ async function Fetch_admin() {
 
     let req = await fetch(`${url}/admin`);
     let res = await req.json();
+   
     let admin_details = document.querySelector(".sales-details");
+
     let adminData = res;
     console.log(adminData);
     admin_details.innerHTML = adminData.map(el => {
@@ -70,6 +95,31 @@ function userDetails() {
     cont.innerHTML = `${admin[0].name}`
 };
 
-document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
-     localStorage.clear("admin");
+document.getElementsByClassName("log_out")[0].addEventListener("click", async(e) => {
+    e.preventDefault()
+    try{
+        let res=await fetch(`${url}/users/logout`,{
+                    headers:{
+                        "content-type":"application/json",
+                        "authorization":token
+                    }
+                 })
+                let data= await res.json()
+                if(data.msg=="Logout Success"){
+                     localStorage.clear("admin");
+                    //  alert("logout succes")
+                     Swal.fire(
+                        'Good job!',
+                        '<h3> Logout Successfully! See You Soon 👍</h3>',
+                        'success'
+                      ).then((res)=>{
+                        window.location.href = "index.html"
+                      })
+                }
+    }catch(err){
+        console.log(err)
+    }
+
 });
+
+}
