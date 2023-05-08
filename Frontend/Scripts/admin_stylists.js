@@ -121,7 +121,7 @@ ${data.map((item) => {
   document.getElementsByClassName("log_out")[0].addEventListener("click", async (e) => {
     e.preventDefault()
     try {
-      let res = await fetch(`${url}/users/logout`, {
+      let res = await fetch(`${baseurl}/users/logout`, {
         headers: {
           "content-type": "application/json",
           "authorization": token
