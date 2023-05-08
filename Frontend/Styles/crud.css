@@ -106,10 +106,10 @@ form > input:last-child:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin-top: 50px;
- 
 }
 #all_products > div {
   padding: 10px;
+  text-align: center;
 }
 #all_products > div:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -133,6 +133,7 @@ form > input:last-child:hover {
   width: 150px;
   height: 150px;
   /* border: 10px solid rgb(32, 22, 26);  */
+  border-radius: 10px;
 }
 .name_pro_div {
   width: 100%;
@@ -151,6 +152,7 @@ form > input:last-child:hover {
   color: #757575;
   font-weight: 400;
   line-height: 5px;
+  font-size: 13px;
 }
 .div5 {
   background-color: #1aab2a;
@@ -163,6 +165,7 @@ form > input:last-child:hover {
   padding-left: 5px;
   border-radius: 10%;
   margin-top: 10px;
+  margin-left: 40%;
 }
 .mrp {
   font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
