@@ -53,7 +53,7 @@ nav {
   height: 175px;
 }
 .logo:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 #navbar {
   background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
@@ -513,7 +513,7 @@ section {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%;
-  height: 100px;
+  height: 75px;
   display: flex;
   justify-content: space-around;
 }
@@ -531,7 +531,7 @@ section {
 #card-details-1 {
   text-align: center;
   padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #card-details-2 {
@@ -546,7 +546,7 @@ section {
   border-radius: 20px;
   text-align: center;
   padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -558,7 +558,7 @@ section {
   border-radius: 20px;
   text-align: center;
   padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #card-details-3 {
@@ -574,7 +574,7 @@ section {
   border-radius: 20px;
   text-align: center;
   padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #card-stylist-female {
@@ -585,5 +585,5 @@ section {
   border-radius: 20px;
   text-align: center;
   padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
 }
