@@ -19,7 +19,17 @@ window.addEventListener("load",()=>{
 })
 
 function display(){
-  
+ 
+   //code for navbar cursal
+   let sidebar = document.querySelector(".sidebar");
+   let sidebarBtn = document.querySelector(".sidebarBtn");
+   sidebarBtn.onclick = function () {
+     sidebar.classList.toggle("active");
+     if (sidebar.classList.contains("active")) {
+       sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+     } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+   };
+
   let container = document.getElementById("all_products")
 const stylist_id = localStorage.getItem("stylist_id")
 let arr
@@ -34,12 +44,22 @@ async function fetchdata() {
   })
   let data = await res.json()
   if (data.msg == "wrong token" || data.msg == "Please login first") {
-    alert("Please Login")
+    // alert("Please Login")
+    Swal.fire(
+      'Good job!',
+      '<h3> SalonLex - Proceed to Login 👍</h3>',
+      'success'
+    )
   }
   else {
     arr = data
     if (data.length == 0) {
-      alert("You have no Appointments")
+      // alert("You have no Appointments")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You have no Appointments!',
+             })
       return
     }
     console.log(data)
