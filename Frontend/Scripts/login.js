@@ -11,7 +11,7 @@ butt.addEventListener("click",(e)=>{
     const payload={
         email,password
     };
-    fetch(`${baseurl}/user/login`,{
+    fetch(`${baseurl}/users/login`,{
     method:"POST",
     headers:{
         "Content-type":"application/json"
