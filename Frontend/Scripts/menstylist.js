@@ -103,7 +103,10 @@ form.addEventListener("submit", (e) => {
       if (data.msg == "wrong token" || data.msg == "Please login first") {
         alert("Please Login");
       } else {
-        alert("Booking confirmed");
+        // alert("Booking confirmed");
+        Swal.fire("Good job!", "<h3> Booking Confirmed! Enjoy 👍</h3>", "success").then((res) => {
+          window.location.href = "index.html";
+        });
       }
     })
 

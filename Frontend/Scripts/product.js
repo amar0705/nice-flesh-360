@@ -143,6 +143,7 @@ function displayProduct(data) {
     price.setAttribute("class", "price");
 
     let Buy = document.createElement("button");
+    Buy.setAttribute("id", "buy-btn");
     Buy.innerText = "Buy";
     Buy.classList = "Buy";
     Buy.addEventListener("click", () => {
