@@ -100,13 +100,22 @@ form.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.msg == "wrong token" || data.msg == "Please login first") {
-        alert("Please Login");
+      if (data.msg == "wrong token" || data.msg == "Please login again") {
+        return  Swal.fire(
+          'warning!',
+          '<h3> Please Login </h3>',
+          'warning'
+        ).then((res)=>{
+          window.location.href = "login.html"
+        })
       } else {
-        // alert("Booking confirmed");
-        Swal.fire("Good job!", "<h3> Booking Confirmed! Enjoy 👍</h3>", "success").then((res) => {
-          window.location.href = "index.html";
-        });
+        return  Swal.fire(
+          '',
+          '<h3> Booking Confirmed</h3>',
+          'success'
+        ).then((res)=>{
+          window.location.href = "appointment.html"
+        })
       }
     })
 

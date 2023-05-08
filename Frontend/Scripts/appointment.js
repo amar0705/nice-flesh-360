@@ -3,8 +3,20 @@ const token=localStorage.getItem("token")
 let container=document.getElementById("cont")
 let arr
 
-
-fetchdata()
+window.addEventListener("load",()=>{
+if(token){
+  fetchdata()
+}
+else{
+  return  Swal.fire(
+    'warning!',
+    '<h3> Please Login</h3>',
+    'warning'
+  ).then((res)=>{
+    window.location.href = "login.html"
+  })
+}
+})
 
 async function fetchdata(){
 let res= await fetch(`${baseurl}/appointment/users`,{
