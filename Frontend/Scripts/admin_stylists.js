@@ -1,9 +1,31 @@
 let baseurl = "http://localhost:8080"
-const token = localStorage.getItem("token")
+
+const token=localStorage.getItem("admin")
+window.addEventListener("load",()=>{
+  if(token){
+    display()
+  }
+  else{
+    // alert("Login first")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'SalonLex - Please Login first!',
+      footer: '<a href="../Frontend/login.html">Log in</a>'
+    }).then((res)=>{
+      window.location.href = "login.html"
+    })
+  }
+})
+
+function display(){
+
 const stylearr = localStorage.getItem("style")
 var stylistArea = document.getElementById("all_products")
 let arr
 let stylist
+
+
 fetchdata()
 
 async function fetchdata() {
@@ -75,6 +97,7 @@ function getappointment(id) {
   window.location.href = "admin_appointments.html"
 }
 
+
 userDetails();
 function userDetails() {
     let admin = JSON.parse(localStorage.getItem("adminData"));
@@ -85,6 +108,31 @@ function userDetails() {
     cont.innerHTML = `${admin[0].name}`
 };
 
-document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
-     localStorage.clear("admin");
+document.getElementsByClassName("log_out")[0].addEventListener("click", async(e) => {
+    e.preventDefault()
+    try{
+        let res=await fetch(`${url}/users/logout`,{
+                    headers:{
+                        "content-type":"application/json",
+                        "authorization":token
+                    }
+                 })
+                let data= await res.json()
+                if(data.msg=="Logout Success"){
+                     localStorage.clear("admin");
+                  //    alert("logout succes")
+                     Swal.fire(
+                      'Good job!',
+                      '<h3> Logout Successfully! See You Soon 👍</h3>',
+                      'success'
+                    ).then((res)=>{
+                      window.location.href = "index.html"
+                    })
+                }
+    }catch(err){
+        console.log(err)
+    }
+
 });
+
+}
