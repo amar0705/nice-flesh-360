@@ -18,6 +18,7 @@ window.addEventListener("load", () => {
   }
 })
 
+
 function display() {
 
   //code for navbar cursal
@@ -29,6 +30,7 @@ function display() {
       sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
     } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
   };
+
 
   let container = document.getElementById("all_products")
   const stylist_id = localStorage.getItem("stylist_id")
@@ -51,6 +53,7 @@ function display() {
         'success'
       )
     }
+
     else {
       arr = data
       if (data.length == 0) {
@@ -64,6 +67,7 @@ function display() {
       }
       console.log(data)
       getdata(data)
+
     }
   }
 
