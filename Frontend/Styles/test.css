@@ -153,6 +153,7 @@ body > div {
 #signup-text {
   text-decoration: none;
   color: black;
+  margin-left: 40px;
 }
 
 #login {
@@ -387,11 +388,11 @@ form {
   margin-top: 125px;
 }
 
-.login-admin{
+.login-admin {
   text-align: center;
 }
 
-.login-admin:hover{
+.login-admin:hover {
   color: white;
   cursor: pointer;
 }
