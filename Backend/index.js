@@ -20,8 +20,6 @@ app.use("/product",product)
 
 app.use("/users",userRouter)
 app.use("style",styleRouter)
-
-app.use("/user",userRouter)
 app.use("/style",styleRouter)
 
 

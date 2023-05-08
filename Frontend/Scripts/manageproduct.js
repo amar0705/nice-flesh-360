@@ -1,4 +1,27 @@
 const url = `http://localhost:8080`;
+
+// authentications
+
+const token=localStorage.getItem("admin")
+window.addEventListener("load",()=>{
+    if(token){
+        display()
+    }
+    else{
+        // alert("Login first")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'SalonLex - Please Login first!',
+            footer: '<a href="../Frontend/login.html">Log in</a>'
+          }).then((res)=>{
+            window.location.href = "login.html"
+          })
+    }
+})
+
+function display(){
+
 let deleted = JSON.parse(localStorage.getItem("deleted")) || [];
 
 let sidebar = document.querySelector(".sidebar");
@@ -215,6 +238,31 @@ function userDetails() {
     cont.innerHTML = `${admin[0].name}`
 };
 
-document.getElementsByClassName("log_out")[0].addEventListener("click", () => {
-     localStorage.clear("admin");
+document.getElementsByClassName("log_out")[0].addEventListener("click", async(e) => {
+    e.preventDefault()
+    try{
+        let res=await fetch(`${url}/users/logout`,{
+                    headers:{
+                        "content-type":"application/json",
+                        "authorization":token
+                    }
+                 })
+                let data= await res.json()
+                if(data.msg=="Logout Success"){
+                     localStorage.clear("admin");
+                  //    alert("logout succes")
+                     Swal.fire(
+                      'Good job!',
+                      '<h3> Logout Successfully! See You Soon 👍</h3>',
+                      'success'
+                    ).then((res)=>{
+                      window.location.href = "index.html"
+                    })
+                }
+    }catch(err){
+        console.log(err)
+    }
+
 });
+
+}
