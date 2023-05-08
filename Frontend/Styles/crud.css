@@ -54,6 +54,7 @@ form > input:last-child:hover {
   color: white;
   border: none;
   border-radius: 5px;
+  margin-top: 5%;
 }
 .delete:hover {
   cursor: pointer;
@@ -122,6 +123,7 @@ form > input:last-child:hover {
   grid-gap: 20px;
   margin-top: 50px;
   /* border: 10px solid rgb(255, 0, 106);  */
+  text-align: center;
 }
 .sales-details > div {
   padding: 10px;
