@@ -166,3 +166,133 @@ body {
   .bookbtn:hover{
     cursor: pointer;
   }
+
+
+
+  /* ------- Animation------------------ */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    width: 100%;
+    height: 100vh;
+    /* background: #36768c; */
+    font-family: 'roboto', sans-serif;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  
+  }
+  .card{
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 8px solid #fff;
+    position: relative;
+    margin: auto;
+  }
+  
+  
+  .card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .card-body{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background: rgb(95,213,222);
+    background: linear-gradient(208deg, rgba(95,213,222,0.5803571428571428) 0%, rgba(251,211,29,0.6671918767507004) 100%);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .5s;
+  }
+  
+  .card:hover .card-body{
+    right: 0;
+  }
+  
+  .card-title{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+  }
+  
+  .main{
+    margin-top: 50px;
+  }
+  
+  /* #container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+  }  */
+  
+  .card-sub-title{
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .card-info{
+    font-size: 16px;
+    line-height: 25px;
+    margin: 40px 0;
+    font-weight: 400;
+  }
+  
+  .bookbtn{
+    color: #1f3d47;
+    background: #8fabba;
+    padding: 10px 20px;
+    width: 120px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  
+  
+  /* -------------------- Mid screen------------- */
+  
+  
+  @media(min-width: 600px) and (max-width: 1200px) {
+    #main-cont{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 2rem;
+      /* width: 80%; */
+      /* margin: auto; */
+    } 
+  }
+  /* -------------------- Small Screen---------------- */
+  @media(min-width: 200px) and (max-width: 599px) {
+    #main-cont{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      gap: 2rem;
+      /* width: 80%; */
+      /* margin: auto; */
+    } 
+  }
+  
