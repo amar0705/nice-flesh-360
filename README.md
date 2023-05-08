@@ -28,7 +28,7 @@
    
 ## Deployed Link :
 
-   - Frontend - https://snipsandspikes.netlify.app/
+   - Frontend - will be there
    - Backend  - https://nice-pink-antelope-gear.cyclic.app/
 
 
