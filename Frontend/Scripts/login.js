@@ -1,5 +1,4 @@
-
-const baseurl="http://localhost:8080"
+const baseurl="https://elegant-hare-dungarees.cyclic.app"
 const butt=document.getElementById("log")
 const admin=document.querySelector(".login-admin")
 

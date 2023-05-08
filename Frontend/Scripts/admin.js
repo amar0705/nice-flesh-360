@@ -1,4 +1,4 @@
-const url = `http://localhost:8080`;
+const url = `https://elegant-hare-dungarees.cyclic.app`;
 
 const token=localStorage.getItem("admin")
 window.addEventListener("load",()=>{

@@ -1,4 +1,4 @@
-let baseurl="http://localhost:8080"
+let baseurl="https://elegant-hare-dungarees.cyclic.app"
 const token=localStorage.getItem("token")
 
 const stylearr=localStorage.getItem("style")
