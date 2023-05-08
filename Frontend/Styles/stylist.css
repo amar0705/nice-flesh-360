@@ -1,298 +1,290 @@
-
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
-  background-image: url('https://77thehill.com/wp-content/uploads/2016/03/hair-salon-enfield.jpg');
+  background-image: url("https://77thehill.com/wp-content/uploads/2016/03/hair-salon-enfield.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.cont{
-    width: 100%;
-    height: auto;
-    padding-top: 120px;
-    padding-bottom: 150px;
+.cont {
+  width: 100%;
+  height: auto;
+  padding-top: 120px;
+  padding-bottom: 150px;
 }
-#main-cont{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2rem;
-    width: 80%;
-    margin: auto;
+#main-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 80%;
+  margin: auto;
 }
-.card{
-    width: 100%;
-/* eight: 500px; */
-    position: relative;
-    overflow-y: hidden;
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 0.25rem;
-  }
+.card {
+  width: 100%;
+  /* eight: 500px; */
+  position: relative;
+  overflow-y: hidden;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
 
-  
-  .view-modal{
-    top: 50%;
-    color: #7d2ae8;
-    font-size: 18px;
-    padding: 10px 25px;
-    background: #fff;
-    transform: translate(-50%, -50%);
-  }
-  .popup{
-    position: fixed;
-    background: #c1c0c0;
-    padding: 25px;
-    border-radius: 15px;
-    left: 50%;
-    top: -150%;
-    max-width: 380px;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
-    transform: translate(-50%, -50%) scale(1.2);
-    transition: top 0s 0.3s ease-in-out,
-                opacity 0.3s 0s ease-in-out,
-                transform 0.3s 0s ease-in-out;
-  }
-  .popup.show{
-    top: 50%;
-    opacity: 1;
-    pointer-events: auto;
-    transform:translate(-50%, -50%) scale(1);
-    transition: top 0s 0s ease-in-out,
-                opacity 0.2s 0s ease-in-out,
-                transform 0.2s 0s ease-in-out;
-  
-  }
-  .popup :is(header, .icons, .field){
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .popup header{
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ebedf9;
-  }
-  header span{
-    font-size: 21px;
-    font-weight: 600;
-  }
-  header .close, .icons a{
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-  }
-  header .close{
-    color: #878787;
-    font-size: 17px;
-    background: #f2f3fb;
-    height: 33px;
-    width: 33px;
-    cursor: pointer;
-  }
-  header .close:hover{
-    background: #ebedf9;
-  }
-  .popup .content{
-    margin: 20px 0;
-  }
-  .popup .icons{
-    margin: 15px 0 20px 0;
-  }
-  .content p{
-    font-size: 16px;
-  }
-  .content .icons a{
-    height: 50px;
-    width: 50px;
-    font-size: 20px;
-    text-decoration: none;
-    border: 1px solid transparent;
-  }
- 
- 
-  .content .field{
-    margin: 12px 0 -5px 0;
-    height: 45px;
-    border-radius: 4px;
-    padding: 0 5px;
-    border: 1px solid #e1e1e1;
-  }
-  
-  .ppDate {
-    height: 38px;
-    font-size: 12px;
-    padding-left: 6px;
-  }
-  .ppDate::-webkit-inner-spin-button,
-  .ppDate::-webkit-calendar-picker-indicator {
-      display: none;
-      -webkit-appearance: none;
-  }
-  .ppDate:focus::-webkit-calendar-picker-indicator, .ppDate:hover::-webkit-calendar-picker-indicator {
-    display: block;
-    -webkit-appearance: menulist;
-  }
-  .ppDate::-webkit-clear-button {
-    display: none;
-    -webkit-appearance: none;
-  }
-  .constrained {
-    max-width: 160px;
-  }
+.view-modal {
+  top: 50%;
+  color: #7d2ae8;
+  font-size: 18px;
+  padding: 10px 25px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.popup {
+  position: fixed;
+  background: #c1c0c0;
+  padding: 25px;
+  border-radius: 15px;
+  left: 50%;
+  top: -150%;
+  max-width: 380px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%) scale(1.2);
+  transition: top 0s 0.3s ease-in-out, opacity 0.3s 0s ease-in-out, transform 0.3s 0s ease-in-out;
+}
+.popup.show {
+  top: 50%;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0s 0s ease-in-out, opacity 0.2s 0s ease-in-out, transform 0.2s 0s ease-in-out;
+  background: linear-gradient(135deg, #eaea66 0%, #6fc1dd 100%);
+}
 
-  .bookbtn{
-    display: block;
-    margin: auto;
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-  }
-  .bookbtn:hover{
-    cursor: pointer;
-  }
+.popup :is(header, .icons, .field) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popup header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ebedf9;
+}
+header span {
+  font-size: 21px;
+  font-weight: 600;
+}
+header .close,
+.icons a {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+header .close {
+  color: #878787;
+  font-size: 17px;
+  background: #f2f3fb;
+  height: 33px;
+  width: 33px;
+  cursor: pointer;
+}
+header .close:hover {
+  background: #ebedf9;
+}
+.popup .content {
+  margin: 20px 0;
+}
+.popup .icons {
+  margin: 15px 0 20px 0;
+}
+.content p {
+  font-size: 16px;
+}
+.content .icons a {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
 
+.content .field {
+  margin: 12px 0 -5px 0;
+  height: 45px;
+  border-radius: 4px;
+  padding: 0 5px;
+  border: 1px solid #e1e1e1;
+}
 
+.ppDate {
+  height: 38px;
+  font-size: 12px;
+  padding-left: 6px;
+}
+.ppDate::-webkit-inner-spin-button,
+.ppDate::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.ppDate:focus::-webkit-calendar-picker-indicator,
+.ppDate:hover::-webkit-calendar-picker-indicator {
+  display: block;
+  -webkit-appearance: menulist;
+}
+.ppDate::-webkit-clear-button {
+  display: none;
+  -webkit-appearance: none;
+}
+.constrained {
+  max-width: 160px;
+}
 
-  /* ------- Animation------------------ */
+.bookbtn {
+  display: block;
+  margin: auto;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+.bookbtn:hover {
+  cursor: pointer;
+}
 
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body{
-    width: 100%;
-    height: 100vh;
-    /* background: #36768c; */
-    font-family: 'roboto', sans-serif;
-    /* display: flex;
+/* ------- Animation------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  /* background: #36768c; */
+  font-family: "roboto", sans-serif;
+  /* display: flex;
     justify-content: center;
     align-items: center; */
-  
-  }
-  .card{
-    width: 320px;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 8px solid #fff;
-    position: relative;
-    margin: auto;
-  }
-  
-  
-  .card-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-  
-  .card-body{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: -100%;
-    position: absolute;
-    background: rgb(95,213,222);
-    background: linear-gradient(208deg, rgba(95,213,222,0.5803571428571428) 0%, rgba(251,211,29,0.6671918767507004) 100%);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    color: #fff;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: .5s;
-  }
-  
-  .card:hover .card-body{
-    right: 0;
-  }
-  
-  .card-title{
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: 500;
-  }
-  
-  .main{
-    margin-top: 50px;
-  }
-  
-  /* #container{
+}
+.card {
+  width: 320px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 8px solid #fff;
+  position: relative;
+  margin: auto;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background: rgb(95, 213, 222);
+  background: linear-gradient(
+    208deg,
+    rgba(95, 213, 222, 0.5803571428571428) 0%,
+    rgba(251, 211, 29, 0.6671918767507004) 100%
+  );
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.card:hover .card-body {
+  right: 0;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.main {
+  margin-top: 50px;
+}
+
+/* #container{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 2rem;
     width: 80%;
     margin: auto;
   }  */
-  
-  .card-sub-title{
-    text-transform: capitalize;
-    font-size: 14px;
-    font-weight: 300;
+
+.card-sub-title {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.card-info {
+  font-size: 16px;
+  line-height: 25px;
+  margin: 40px 0;
+  font-weight: 400;
+}
+
+.bookbtn {
+  color: #1f3d47;
+  background: white;
+  padding: 10px 20px;
+  width: 120px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* -------------------- Mid screen------------- */
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  #main-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* width: 80%; */
+    /* margin: auto; */
   }
-  
-  .card-info{
-    font-size: 16px;
-    line-height: 25px;
-    margin: 40px 0;
-    font-weight: 400;
+}
+/* -------------------- Small Screen---------------- */
+@media (min-width: 200px) and (max-width: 599px) {
+  #main-cont {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    /* width: 80%; */
+    /* margin: auto; */
   }
-  
-  .bookbtn{
-    color: #1f3d47;
-    background: #8fabba;
-    padding: 10px 20px;
-    width: 120px;
-    border-radius: 5px;
-    text-transform: capitalize;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  
-  
-  /* -------------------- Mid screen------------- */
-  
-  
-  @media(min-width: 600px) and (max-width: 1200px) {
-    #main-cont{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 2rem;
-      /* width: 80%; */
-      /* margin: auto; */
-    } 
-  }
-  /* -------------------- Small Screen---------------- */
-  @media(min-width: 200px) and (max-width: 599px) {
-    #main-cont{
-      display: grid;
-      grid-template-columns: repeat(1,1fr);
-      gap: 2rem;
-      /* width: 80%; */
-      /* margin: auto; */
-    } 
-  }
-  
+}
