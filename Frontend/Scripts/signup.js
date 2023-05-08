@@ -9,6 +9,16 @@ const btn= document.getElementById("login")
     let gen= document.getElementById("signup-gen").value
     let email= document.getElementById("signup-email").value
     let password= document.getElementById("signup-pass").value
+
+    if(name=="" || age=="" || email=="" || password=="" || gen==""){
+      return  Swal.fire(
+        'warning!',
+        '<h3> Please fill all details</h3>',
+        'warning'
+      ).then((res)=>{
+        window.location.href = "signup.html"
+      })
+    }
       // console.log(name,age)
     const payload = {
       name,age,gen,email,password

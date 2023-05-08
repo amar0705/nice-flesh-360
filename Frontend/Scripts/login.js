@@ -8,6 +8,16 @@ butt.addEventListener("click",(e)=>{
     let email=document.getElementById("email").value
     let password=document.getElementById("pass").value
 
+    if(email=="" || password==""){
+      return  Swal.fire(
+        'warning!',
+        '<h3> Please fill all details</h3>',
+        'warning'
+      ).then((res)=>{
+        window.location.href = "login.html"
+      })
+    }
+
     const payload={
         email,password
     };
