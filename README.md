@@ -4,7 +4,7 @@
 
 <h2 >Descriptions </h2>
 <br>
-<h3>Styler is a hair salon website that enables customers to book appointments online. The platform showcases available time slots, stylists, and charges for haircuts, allowing for a seamless user experience.
+<h3>SALONLEX is a hair salon website that enables customers to book appointments online. The platform showcases available time slots, stylists, and charges for haircuts, allowing for a seamless user experience.
 <h3>
 <br><br>
 
