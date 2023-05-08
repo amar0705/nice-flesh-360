@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8080";
+const baseUrl = "https://elegant-hare-dungarees.cyclic.app";
 let BuyItems = JSON.parse(localStorage.getItem("items")) || [];
 ///api fetch
 mainFunction();
