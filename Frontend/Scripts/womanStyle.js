@@ -67,7 +67,7 @@ function booknow() {
   let book = document.querySelectorAll(".card-btn");
   for (let btn of book) {
     btn.addEventListener("click", (e) => {
-      alert(e.target.dataset.id);
+      // alert(e.target.dataset.id);
       let style;
 
       for (let i = 0; i < arr.length; i++) {
