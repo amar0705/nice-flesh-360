@@ -1,3 +1,32 @@
+window.addEventListener("load",()=>{
+  let token = localStorage.getItem("token")
+  let logintag=document.getElementById("login-tag")
+  if(token){
+    logintag.innerHTML = "Logout"
+    logintag.removeAttribute("href")
+    logintag.addEventListener("click", (e)=>{
+      e.preventDefault()
+      Swal.fire(
+        '',
+        '<h3>Logout Success</h3>',
+        'success'
+      ).then((res)=>{
+        localStorage.clear()
+        window.location.href = "index.html"
+      })
+    })
+    return
+  }
+})
+
+
+
+
+
+
+
+
+
 let baseurl="https://elegant-hare-dungarees.cyclic.app"
 const token=localStorage.getItem("token")
 let container=document.getElementById("cont")
