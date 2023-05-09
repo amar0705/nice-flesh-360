@@ -146,7 +146,8 @@
         DELETE -   /appointments/appointment/delete/:id
 
 <br>
-    
+
+<h2 align="center">System Design</h2>
 <p align="center">
 <img src="https://github.com/amar0705/nice-flesh-360/blob/main/Frontend/assets/systemDesign.jpg">
 </p>
