@@ -62,6 +62,8 @@ function display() {
           icon: 'error',
           title: 'Oops...',
           text: 'You have no Appointments!',
+        }).then((res)=>{
+          window.location.href="admin_stylists.html"
         })
         return
       }
@@ -145,9 +147,13 @@ function display() {
         body: JSON.stringify({ status: "Cancelled" })
       })
       if (res.ok) {
-        alert("Appointment is successfully canceled");
-        fetchdata()
-          ;
+        return  Swal.fire(
+          '',
+          '<h3> Booking Cancelled</h3>',
+          'success'
+        ).then((res)=>{
+         fetchdata()
+        })
       } else {
         alert("Unable to cancel the appointment!");
       }
