@@ -1,62 +1,41 @@
 <div align="center" > 
-<h2>	Hair Salon Appointment Booking System<h2>
+<h2>SALONLEX: Hair Salon Appointment Booking System<h2>
 <img width="30%" src="https://github.com/adityagithubraj/github-boot/blob/main/imge/SALONLEX%20(1).png"><br><br>
 
-<h2 >Descriptions </h2>
+<h2 align="center">Description </h2>
 <br>
 <h3>SALONLEX is a hair salon website that enables customers to book appointments online. The platform showcases available time slots, stylists, and charges for haircuts, allowing for a seamless user experience.
-<h3>
-<br><br>
-
+</h3>
 </div>
-    <h1>Project Name - SALONLEX</h>
-   
-  
+<br>
+    
+   <h2 align="center">Collaborators</h2>
+   <h3 align="center">1. Amarjeet Kumar	- (Team Lead)</h3>
+   <h3 align="center">2. Love Porwal       - (Team Member)</h3>
+   <h3 align="center">3. Rahul gandhi      - (Team Member)</h3>
+   <h3 align="center">4. shahfaisal pinitod - (Team Member) </h3>
+    <h3 align="center">5. Aditya Raj         -  (Team Member)</h3>
+   <br>
+    
+    
+   <h2 align="center">Deployed Link</h2>
+   <h2 align="center">Frontend: /h2>
+    <h3 align="center">Backend: https://nice-pink-antelope-gear.cyclic.app/</h3>
 
 <br>
+<h2 align="center">Tech Stack</h2>
+<h3 align="center">Frontend</h3>
+<p align="center">HTML | CSS | JavaScript</p> 
+       
+<h3 align="center">Backend</h3>
+<p align="center">Node.js | Express.js</p> 
+       
+<h3 align="center"> Database </h3>
+<p align="center">MongoDB Atlas | Redis </p>
 
-    
-   <br><br>
-   <h2>Team</h2>
-   <h3>1. Amarjeet Kumar	- (Team Lead)</h3>
-   <h3>2. Love Porwal       - (Team Member)</h3>
-   <h3>3. Rahul gandhi      - (Team Member)</h3>
-   <h3>4. shahfaisal pinitod - (Team Member) </h3>
-   <h3>5. Aditya Raj         -  (Team Member)</h3>
-   <br><br>
-   
-## Deployed Link :
+<h3 align="center">CSS Libraries</h3>
+<p align="center">BootStrap</p> 
 
-   - Frontend - will be there
-   - Backend  - https://nice-pink-antelope-gear.cyclic.app/
-
-
-<br>
- 
-<br>
-
-
-# Tech stack 
-
-### Frontend:
-
-- HTML 
-- CSS
-- JavaScript 
-
-### Backend:
- 
-- NodeJS 
-- ExpressJS
-    
-### Database:
-    
-- MongoDB Atlas
-- Redis
-
-### CSS Libaries:
-    
-- Bootstrap
 
 # Schema : 
 
