@@ -31,7 +31,15 @@ if(data.msg=="wrong token" || data.msg=="Please login first"){
   }
   else{
     arr=data
-    console.log(data)
+    if(data.length==0){
+      return  Swal.fire(
+        'warning!',
+        '<h3>You have no Appointments</h3>',
+        'warning'
+      ).then((res)=>{
+        window.location.href = "index.html"
+      })
+    }
     getdata(data)
   }
   }
@@ -100,8 +108,14 @@ function getdata(data){
         }
       })
       if (res.ok) {
-        alert("Appointment is successfully canceled");
-        fetchdata()
+        return  Swal.fire(
+          '',
+          '<h3> Booking Cancelled</h3>',
+          'success'
+        ).then((res)=>{
+         fetchdata()
+        })
+        
         ;
       } else {
         alert("Unable to cancel the appointment!");
