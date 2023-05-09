@@ -151,7 +151,7 @@
 
 
 
-![snips spikes drawio (1)](https://user-images.githubusercontent.com/87657007/228304975-dc21afa6-a2bb-407a-bcd0-fbd1d1baa52c.png)
+![snips spikes drawio (1)](https://drive.google.com/file/d/18lCASp8VkJMmiM7fg2acLrT2jMp7GeZF/view?usp=share_link)
 
   <h1>1.  Home Page  </h1><br><br>
   
