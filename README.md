@@ -11,7 +11,6 @@
 </div>
     <h1>Project Name - SALONLEX</h>
    
-
   
 
 <br>
