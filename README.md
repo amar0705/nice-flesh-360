@@ -6,23 +6,44 @@
 <br>
 <h3>SALONLEX is a hair salon website that enables customers to book appointments online. The platform showcases available time slots, stylists, and charges for haircuts, allowing for a seamless user experience.
 </h3>
-</div>
-<br>
-    
+</div>  
+  
+
+    <br>
    <h2 align="center">Collaborators</h2>
-   <h3 align="center">1. Amarjeet Kumar	- (Team Lead)</h3>
-   <h3 align="center">2. Love Porwal       - (Team Member)</h3>
-   <h3 align="center">3. Rahul gandhi      - (Team Member)</h3>
-   <h3 align="center">4. shahfaisal pinitod - (Team Member) </h3>
-    <h3 align="center">5. Aditya Raj         -  (Team Member)</h3>
-   <br>
     
-    
-   <h2 align="center">Deployed Link</h2>
-   <h3 align="center">Frontend: </h3>
-    <h3 align="center">Backend: https://nice-pink-antelope-gear.cyclic.app/</h3>
+1. Amarjeet Kumar (Team Lead)
+   >    - e-Mail: amarkr0705@gmail.com
+   >    - GitHub: https://github.com/amar0705
+
+
+2. Love Porwal (Team Member)
+   >    - e-Mail: lluvporwall@gmail.com
+   >    - GitHub: https://github.com/love-porwal 
+
+
+3. Rahul gandhi (Team Member)
+   >    - e-Mail: Rahulgandhi241172@gmail.com
+   >    - GitHub: https://github.com/rahul241172
+
+
+4. Shahfaisal pinitod (Team Member)
+   >    - e-Mail: faisalpinitod@gmail.com
+   >    - GitHub: https://github.com/faisalpinitod
+
+
+5. Aditya Raj   (Team Member)
+   >    - e-Mail: adityaraj9843@gmail.com
+   >    - GitHub: https://github.com/adityagithubraj
 
 <br>
+    
+   <h2 align="center">Deployed Link</h2>
+  <h3 align="center">Frontend: https://salonlex.netlify.app/ </h3>
+   <h3 align="center">Backend: https://nice-pink-antelope-gear.cyclic.app/</h3>
+
+<br>
+    
 <h2 align="center">Tech Stack</h2>
 <h3 align="center">Frontend</h3>
 <p align="center">HTML | CSS | JavaScript</p> 
@@ -51,8 +72,7 @@
    - image_urls
    - Stylists_name
    - descriptions
-   - Styler
-
+   
 - style 
     
   -  Name
@@ -60,16 +80,9 @@
   -  Price
   -  Gender
 
-- Slots 
-     - id
-     - start time
-     - end time
-     - stylistId
-     - available
-     - slotId  
-
 - products
-    - title
+    
+   - title
    - img
    - price
    - mrp_price
@@ -80,6 +93,7 @@
    - type
     
 - appointments 
+    
    - stylist_id
    - user_id
    - style_id
@@ -93,7 +107,7 @@
    - linkedin
    - Github
    - email
-   - pass
+   - password
    - image
 
 ## 
@@ -101,24 +115,19 @@
 ----
 <br>
 
-## `Services`
+## `Style`
 <br>   
 
-- Male Services
+- Male Style
                 
-        GET    -   /services/male 
-        POST   -   /services/male/addMaleService
-        PATCH  -   /services/male/update/:id
-        DELETE -   /services/male/delete/:id
+        GET    -   /style/male 
+        POST   -   /style/male 
+     
+- Female Style
 
-- Female Services
-
-        GET    -   /services/female 
-        GET    -   /services/female/female/:id 
-        POST   -   /services/female/addFemaleService
-        PATCH  -   /services/female/update/:id
-        DELETE -   /services/female/delete/:id
-
+        GET    -   /style/female
+        POST   -   /style/female
+      
 
 <br>
 
@@ -128,9 +137,11 @@
 - Stylers 
                 
         GET    -   /stylist/male
-        POST   -   /stylist/styler/addStylistService
-        PATCH  -   /stylist/styler/update/:id
-        DELETE -   /stylist/styler/delete/:id
+        GET    -   /stylist/female
+        POST   -   /stylist/male/query
+        POST   -   /stylist/female/query
+        PATCH  -   /stylist/update/:id
+        DELETE -   /stylist/delete/:id
 
 
 <br>
@@ -140,12 +151,17 @@
 
 - Appointment 
                 
-        GET    -   /appointments/appointment
-        POST   -   /appointments/appointment/add
-        PATCH  -   /appointments/appointment/update/:id
-        DELETE -   /appointments/appointment/delete/:id
+        GET    -   /appointments
+        POST   -   /appointments/new
+        PATCH  -   /appointments/update/:id
+       PATCH  -   /appointments/update/:id
+       PATCH  -   /appointments/update/stylistid
+       DELETE -   /appointments/delete/:id
+       DELETE -   /appointments/delete/stylistid
+    
+    
 
-<br>
+
 
 <h2 align="center">System Design</h2>
 <p align="center">
