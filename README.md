@@ -8,8 +8,6 @@
 </h3>
 </div>  
   
-
-    <br>
    <h2 align="center">Collaborators</h2>
     
 1. Amarjeet Kumar (Team Lead)
@@ -113,8 +111,19 @@
 ## 
     # API Endpoints 
 ----
-<br>
 
+  ## `users`
+<br>   
+  
+        GET    -   /users
+        POST   -   /users/register
+        POST   -   /users/login
+        GET    -   /users/logout
+        PATCH    -  /users/update/:id
+        DELETE    -  /users/delete/:id  
+
+<br>
+  
 ## `Style`
 <br>   
 
@@ -158,10 +167,21 @@
        PATCH  -   /appointments/update/stylistid
        DELETE -   /appointments/delete/:id
        DELETE -   /appointments/delete/stylistid
-    
-    
+ 
+  
+   ## `Products`
+<br>   
 
-
+- Products 
+                
+        GET    -   /Product
+        GET    -   /Product/men
+        GET    -   /Product/women
+        POST   -   /Product
+        POST   -   /Product/orders
+        PATCH  -   /Product/:id
+        DELETE -   /Product/:id
+      
 
 <h2 align="center">System Design</h2>
 <p align="center">
