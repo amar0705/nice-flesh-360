@@ -146,12 +146,11 @@
         DELETE -   /appointments/appointment/delete/:id
 
 <br>
-    # System design
-- we can give home services
-
-
-
-![snips spikes drawio (1)](https://drive.google.com/file/d/18lCASp8VkJMmiM7fg2acLrT2jMp7GeZF/view?usp=share_link)
+    
+<p align="center">
+<img src="https://github.com/amar0705/nice-flesh-360/blob/main/Frontend/assets/systemDesign.jpg">
+</p>
+    
 
   <h1>1.  Home Page  </h1><br><br>
   
