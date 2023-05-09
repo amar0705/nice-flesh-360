@@ -39,17 +39,25 @@
 
 # Tech stack 
 
-### Frontend 
+### Frontend:
 
-- Bootstrap / HTML / CSS / JavaScript 
+- HTML 
+- CSS
+- JavaScript 
 
-### Backend 
+### Backend:
  
 - NodeJS 
 - ExpressJS
-- Database : MongoDB 
+    
+### Database:
+    
+- MongoDB Atlas
+- Redis
 
-
+### CSS Libaries:
+    
+- Bootstrap
 
 # Schema : 
 
