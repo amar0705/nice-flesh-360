@@ -111,24 +111,28 @@ function displayCards(data) {
 }
 
     //postrequest
-    // let c = localStorage.getItem("count") || 0;
-    async function productpost(){
-       
+    let addButton = document.getElementById("addBtn");
+
+    addButton.addEventListener("click", async(e)=>{
+        e.preventDefault();
+      
+      let  title=document.querySelector("#prd_title").value;
+      let   img=document.querySelector("#prd_img").value;
+      let   price=document.querySelector("#acutal_price").value;
+      let   mrp_price=document.querySelector("#mrp_price").value;
+      let   discount=document.querySelector("#dis_perc").value;
+      let   rating=document.querySelector("#rating").value;
+      let  category=document.querySelector("#category").value;
+        
         try{
-          let prd_body={
-  
-            title:document.querySelector("#prd_title").value,
-            img:document.querySelector("#prd_img").value,
-            price:document.querySelector("#acutal_price").value,
-            mrp_price:document.querySelector("#mrp_price").value,
-            discount:document.querySelector("#dis_perc").value,
-            rating:document.querySelector("#rating").value,
-            category:document.querySelector("#category").value,
-          
-       }
+        
             let res = await fetch(`${url}/product`,{
                 method:"POST",
-                body:JSON.stringify(prd_body),
+                body:JSON.stringify({
+                    title,
+                    img,price,mrp_price,discount,rating,category
+                
+                }),
                 headers:{"Content-type":"application/json"}
             });
             let data = await res.json();
@@ -144,43 +148,43 @@ function displayCards(data) {
             
         }catch(err){
             console.log(err);
-        }
-      }
-
-      userDetails();
-      function userDetails() {
-          let admin = JSON.parse(localStorage.getItem("adminData"));
-          let cont = document.getElementById("admin_name");
-          let cont2 = document.getElementById("img-admin");
-      
-          cont2.innerHTML = `<img src="${admin[0].image}">`
-          cont.innerHTML = `${admin[0].name}`
-      };
-      
-      document.getElementsByClassName("log_out")[0].addEventListener("click", async(e) => {
-          e.preventDefault()
-          try{
-              let res=await fetch(`${url}/users/logout`,{
-                          headers:{
-                              "content-type":"application/json",
-                              "authorization":token
-                          }
-                       })
-                      let data= await res.json()
-                      if(data.msg=="Logout Success"){
-                           localStorage.clear("admin");
-                        //    alert("logout succes")
-                           Swal.fire(
-                            'Good job!',
-                            '<h3> Logout Successfully! See You Soon 👍</h3>',
-                            'success'
-                          ).then((res)=>{
-                            window.location.href = "index.html"
-                          })
-                      }
-          }catch(err){
-              console.log(err)
-          }
+        }   
       
       });
+      
+      userDetails();
+      function userDetails() {
+    let admin = JSON.parse(localStorage.getItem("adminData"));
+    let cont = document.getElementById("admin_name");
+    let cont2 = document.getElementById("img-admin");
+
+    cont2.innerHTML = `<img src="${admin[0].image}">`
+    cont.innerHTML = `${admin[0].name}`
+};
+
+document.getElementsByClassName("log_out")[0].addEventListener("click", async(e) => {
+    e.preventDefault()
+    try{
+        let res=await fetch(`${url}/users/logout`,{
+                    headers:{
+                        "content-type":"application/json",
+                        "authorization":token
+                    }
+                 })
+                let data= await res.json()
+                if(data.msg=="Logout Success"){
+                     localStorage.clear("admin");
+                  //    alert("logout succes")
+                  Swal.fire(
+                      'Good job!',
+                      '<h3> Logout Successfully! See You Soon 👍</h3>',
+                      'success'
+                    ).then((res)=>{
+                      window.location.href = "index.html"
+                    })
+                }
+    }catch(err){
+        console.log(err)
+    }
+})
 }
